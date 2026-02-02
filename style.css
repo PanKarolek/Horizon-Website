@@ -86,7 +86,14 @@ body {
 
 .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .work-item { display: block; text-decoration: none; color: inherit; transition: var(--transition); }
-.work-item img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; transition: var(--transition); filter: grayscale(20%); }
+.work-item img { 
+    width: 100%; 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    border-radius: 12px; 
+    transition: var(--transition); 
+    filter: grayscale(20%); 
+}
 .work-item:hover img { transform: scale(0.98); filter: grayscale(0%); }
 .work-info { margin-top: 20px; }
 .work-info h4 { font-family: 'Syncopate', sans-serif; font-size: 1rem; margin-bottom: 5px; text-transform: uppercase; }
@@ -107,21 +114,22 @@ footer { padding: 100px 10% 50px; border-top: 1px solid var(--border); }
 .footer-wrap { display: flex; justify-content: space-between; align-items: flex-end; }
 .footer-logo { height: 35px; }
 
-/* --- RESPONSIVENESS --- */
 @media (max-width: 1024px) {
     .navbar { padding: 20px 5%; }
     .work-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .hero-title .main-name { font-size: 8rem; }
 }
 
 @media (max-width: 768px) {
     .cursor, .nav-menu { display: none; }
     * { cursor: auto !important; }
-    .navbar { padding: 15px 5%; }
-    .hero { padding: 0 5%; text-align: center; }
-    .stats-bar { flex-direction: column; gap: 40px; }
+    .navbar { padding: 10px 5%; background: rgba(255, 255, 255, 0.9); }
+    .main-logo { height: 24px; }
+    .hero { padding: 0 5%; text-align: center; justify-content: center; }
+    .hero-title .sub-text { font-size: 1.2rem; margin-bottom: 5px; }
+    .main-name { font-size: 3rem !important; letter-spacing: -2px; line-height: 1; }
+    .hero-subtext { font-size: 1rem; margin: 20px auto 0; max-width: 90%; }
+    .stats-bar { flex-direction: column; gap: 30px; padding: 40px 10%; }
     .services-grid, .work-grid { grid-template-columns: 1fr; }
-    .work-item img { height: 300px; }
     .footer-wrap { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
     .contact-email { font-size: 1.5rem; }
 }
