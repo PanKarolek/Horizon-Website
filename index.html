@@ -17,7 +17,7 @@
 
     <nav class="navbar" data-aos="fade-down" data-aos-duration="1000">
         <div class="logo-container">
-            <img src="horizon.png" alt="Horizon Logo" class="main-logo">
+            <a href="#hero"><img src="horizon.png" alt="Horizon Logo" class="main-logo"></a>
         </div>
         <ul class="nav-menu">
             <li><a href="#services" class="nav-link translatable" data-en="Services" data-pl="Usługi">Services</a></li>
@@ -33,7 +33,7 @@
         </div>
     </nav>
 
-    <header class="hero">
+    <header id="hero">
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
             <p class="hero-label translatable" data-en="Creative Digital Studio" data-pl="Studio Kreacji Cyfrowej">Creative Digital Studio</p>
             <h1 class="hero-title">
@@ -70,7 +70,7 @@
                     <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
                     <h3 class="translatable" data-en="Web Design" data-pl="Projektowanie WWW">Web Design</h3>
                     <p class="translatable" data-en="Ultra-fast, modern websites tailored to your brand identity." data-pl="Ultraszybkie, nowoczesne serwisy skrojone pod unikalną tożsamość marki.">Ultra-fast, modern websites tailored to your brand identity.</p>
-                    <span class="s-link translatable" data-en="Explore Service" data-pl="Sprawdź Szczegóły">Explore Service <i class="fas fa-arrow-right"></i></span>
+                    <a href="#contact" class="s-link translatable" data-en="Explore Service" data-pl="Sprawdź Szczegóły" style="text-decoration: none;">Explore Service <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="s-card" data-aos="fade-up" data-aos-delay="200">
@@ -78,7 +78,7 @@
                     <div class="icon-box"><i class="fas fa-shopping-cart"></i></div>
                     <h3 class="translatable" data-en="E-Commerce" data-pl="Sprzedaż Online">E-Commerce</h3>
                     <p class="translatable" data-en="Scalable online stores built to convert visitors into customers." data-pl="Skalowalne sklepy internetowe budowane z myślą o konwersji.">Scalable online stores built to convert visitors into customers.</p>
-                    <span class="s-link translatable" data-en="Explore Service" data-pl="Sprawdź Szczegóły">Explore Service <i class="fas fa-arrow-right"></i></span>
+                    <a href="#contact" class="s-link translatable" data-en="Explore Service" data-pl="Sprawdź Szczegóły" style="text-decoration: none;">Explore Service <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="s-card" data-aos="fade-up" data-aos-delay="300">
@@ -86,7 +86,7 @@
                     <div class="icon-box"><i class="fas fa-chart-line"></i></div>
                     <h3 class="translatable" data-en="Marketing Ads" data-pl="Kampanie Ads">Marketing Ads</h3>
                     <p class="translatable" data-en="Data-driven campaigns focused on high ROI and lead generation." data-pl="Kampanie oparte na danych, skupione na wysokim zwrocie z inwestycji.">Data-driven campaigns focused on high ROI and lead generation.</p>
-                    <span class="s-link translatable" data-en="Explore Service" data-pl="Sprawdź Szczegóły">Explore Service <i class="fas fa-arrow-right"></i></span>
+                    <a href="#contact" class="s-link translatable" data-en="Explore Service" data-pl="Sprawdź Szczegóły" style="text-decoration: none;">Explore Service <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="s-card" data-aos="fade-up" data-aos-delay="400">
@@ -94,7 +94,7 @@
                     <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
                     <h3 class="translatable" data-en="Web Apps" data-pl="Aplikacje Web">Web Apps</h3>
                     <p class="translatable" data-en="Custom web applications developed with clean, efficient code." data-pl="Dedykowane aplikacje internetowe tworzone z czystym kodem.">Custom web applications developed with clean, efficient code.</p>
-                    <span class="s-link translatable" data-en="Explore Service" data-pl="Sprawdź Szczegóły">Explore Service <i class="fas fa-arrow-right"></i></span>
+                    <a href="#contact" class="s-link translatable" data-en="Explore Service" data-pl="Sprawdź Szczegóły" style="text-decoration: none;">Explore Service <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -171,8 +171,21 @@
         });
 
         const cursor = document.querySelector('.cursor');
+
         document.addEventListener('mousemove', e => {
-            cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        const clickables = document.querySelectorAll('a, button, .lang-btn-modern');
+
+        clickables.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+            });
+            item.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
         });
 
         const langToggle = document.getElementById('lang-toggle');
