@@ -62,7 +62,6 @@ body {
   transition: var(--transition);
 }
 
-/* NEW: centering logic */
 .logo-container {
   flex: 1;
   display: flex;
@@ -472,7 +471,7 @@ footer {
     padding: 10px 5%;
     background: rgba(255, 255, 255, 0.9);
   }
-  /* Reset centering for mobile so logo/actions don't stretch weirdly */
+
   .logo-container,
   .nav-actions {
     flex: initial;

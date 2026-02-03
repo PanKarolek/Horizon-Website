@@ -115,7 +115,7 @@
             </div>
           </a>
 
-          <a href="coding.html" target="_blank" class="work-item" data-aos="fade-up" data-aos-delay="200">
+          <a href="#" target="_blank" class="work-item" data-aos="fade-up" data-aos-delay="200">
             <img src="example2.png" alt="Alex.Tech Ecosystem" />
             <div class="work-info">
               <h4 class="translatable" data-en="Alex.Tech Ecosystem" data-pl="Ekosystem Alex.Tech">Alex.Tech Ecosystem</h4>
@@ -123,7 +123,7 @@
             </div>
           </a>
 
-          <a href="trees.html" target="_blank" class="work-item" data-aos="fade-up" data-aos-delay="400">
+          <a href="#" target="_blank" class="work-item" data-aos="fade-up" data-aos-delay="400">
             <img src="example3.png" alt="GreenRoot Initiative" />
             <div class="work-info">
               <h4 class="translatable" data-en="GreenRoot Initiative" data-pl="Inicjatywa GreenRoot">GreenRoot Initiative</h4>
@@ -142,11 +142,20 @@
           <div class="contact-methods">
             <a href="mailto:hello@horizon.agency" class="contact-email">hello@horizon.agency</a>
             <div class="contact-divider"><span>or</span></div>
-            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=taTszd56QkSNwivn_YB7I1tmtVyAY8lKuq5HrPmT9d9UQ1g3QjZHM1QzRjc1Rzk5OTgyMVlST0U2TS4u" target="_blank" class="btn-survey translatable" data-en="Start Project Survey " data-pl="Wypełnij Brief ">Start Project Survey <i class="fas fa-clipboard-list"></i></a>
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=taTszd56QkSNwivn_YB7I1tmtVyAY8lKuq5HrPmT9d9UQ1g3QjZHM1QzRjc1Rzk5OTgyMVlST0U2TS4u" 
+               id="survey-btn"
+               target="_blank" 
+               class="btn-survey translatable" 
+               data-en="Start Project Survey " 
+               data-pl="Wypełnij Brief "
+               data-en-link="https://forms.office.com/Pages/ResponsePage.aspx?id=taTszd56QkSNwivn_YB7I1tmtVyAY8lKuq5HrPmT9d9UQ1g3QjZHM1QzRjc1Rzk5OTgyMVlST0U2TS4u"
+               data-pl-link="https://forms.office.com/Pages/ResponsePage.aspx?id=taTszd56QkSNwivn_YB7I6eQgU3ZEv9LroMUn3YrCJlURjNXS1JIU0NWSEIySENRWFVLTDJaWkhaNC4u">
+               Start Project Survey <i class="fas fa-clipboard-list"></i>
+            </a>
           </div>
           <div class="contact-socials">
             <a href="#" class="contact-socials-icons" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@mapiszonekpl1209" class="contact-socials-icons" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="contact-socials-icons" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             <a href="#" class="contact-socials-icons" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
           </div>
         </div>
@@ -164,56 +173,6 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({ duration: 1000, once: false });
-
-      window.addEventListener("scroll", function () {
-        const nav = document.querySelector(".navbar");
-        window.scrollY > 50 ? nav.classList.add("scrolled") : nav.classList.remove("scrolled");
-      });
-
-      const cursor = document.querySelector(".cursor");
-      document.addEventListener("mousemove", (e) => {
-        cursor.style.left = e.clientX + "px";
-        cursor.style.top = e.clientY + "px";
-      });
-
-      const clickables = document.querySelectorAll("a, button, .lang-btn-modern, .work-item");
-      clickables.forEach((item) => {
-        item.addEventListener("mouseenter", () => {
-          cursor.style.transform = "translate(-50%, -50%) scale(2)";
-        });
-        item.addEventListener("mouseleave", () => {
-          cursor.style.transform = "translate(-50%, -50%) scale(1)";
-        });
-      });
-
-      const langToggle = document.getElementById("lang-toggle");
-      let currentLang = "en";
-
-      langToggle.addEventListener("click", () => {
-        currentLang = currentLang === "en" ? "pl" : "en";
-        const targets = document.querySelectorAll(".translatable");
-
-        langToggle.classList.add("switching");
-        targets.forEach((el) => el.classList.add("switching"));
-
-        setTimeout(() => {
-          langToggle.querySelector(".lang-label").innerText = currentLang === "en" ? "PL" : "EN";
-
-          targets.forEach((el) => {
-            const newText = el.getAttribute(`data-${currentLang}`);
-            el.childNodes.forEach((node) => {
-              if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "") {
-                node.textContent = newText;
-              }
-            });
-            el.classList.remove("switching");
-          });
-          langToggle.classList.remove("switching");
-        }, 300);
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
-
