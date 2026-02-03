@@ -82,6 +82,8 @@ body {
 
 .lang-btn-modern:hover i { transform: rotate(15deg) scale(1.1); }
 
+.lang-btn-modern:active {transform: scale(0.95);}
+
 .main-logo { height: 32px; }
 .nav-menu { display: flex; list-style: none; gap: 40px; }
 .nav-link { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.85rem; position: relative; }
