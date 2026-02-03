@@ -26,11 +26,20 @@ body {
     opacity: 0;
     transform: translateY(5px);
 }
+ 
 
 .cursor {
-    width: 20px; height: 20px; border: 1px solid var(--text);
-    border-radius: 50%; position: absolute; pointer-events: none; z-index: 9999;
-    transition: transform 0.1s ease;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    background: transparent;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease-out;
+    transform: translate(-50%, -50%);
 }
 
 .navbar {
@@ -78,9 +87,11 @@ body {
 .nav-link { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.85rem; position: relative; }
 .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--text); transition: 0.3s; }
 .nav-link:hover::after { width: 100%; }
-.nav-cta { background: var(--text); color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: 600; font-size: 0.8rem; }
+.nav-cta { background: var(--text); color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 0.8rem; transition: 0.15;}
+.nav-cta:hover {transform: translateY(-3px);}
+.nav-cta:active {transform: scale(0.95);}
 
-.hero {
+#hero {
     height: 100vh; display: flex; align-items: center; padding: 0 10%;
     background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 15%, rgba(255, 255, 255, 0.1) 80%), 
     url('sunrise.png') no-repeat center center/cover;
