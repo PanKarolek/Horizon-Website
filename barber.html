@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gentleman's Cut | Barber Shop</title>
+<link rel="stylesheet" href="bstyle.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<header>
+<a href="#home" class="logo">THE GENTLEMAN'S CUT</a>
+<nav>
+    <a href="#home" data-i18n="home">Strona Główna</a>
+    <a href="#price" data-i18n="price">Cennik</a>
+    <a href="#gallery" data-i18n="gallery">Galeria</a>
+    <a href="#contact" data-i18n="contact">Kontakt</a>
+    <button class="lang-btn" onclick="setLanguage('pl')">PL</button>
+    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+</nav>
+</header>
+
+<section id="home" class="hero show">
+    <h1 data-i18n="heroTitle">KLASYKA. PRECYZJA. TWÓJ STYL.</h1>
+    <p data-i18n="heroText">Tradycyjne rzemiosło w nowoczesnym wydaniu.</p>
+</section>
+
+<section id="price">
+<h2 data-i18n="price">CENNIK</h2>
+<div class="pricing-table">
+    <div class="price-item"><span data-i18n="p1"></span><span>60 PLN</span></div>
+    <div class="price-item"><span data-i18n="p2"></span><span>40 PLN</span></div>
+    <div class="price-item"><span data-i18n="p3"></span><span>90 PLN</span></div>
+    <div class="price-item"><span data-i18n="p4"></span><span>50 PLN</span></div>
+</div>
+</section>
+
+<section id="gallery">
+<h2 data-i18n="gallery">GALERIA</h2>
+<div class="gallery">
+    <img src="barber1.jfif">
+    <img src="barber2.jfif">
+    <img src="barber3.jpg">
+</div>
+</section>
+
+<section id="contact">
+<h2 data-i18n="contact">KONTAKT</h2>
+<div class="contact-info">
+    <div class="contact-box">
+        <h3 data-i18n="hours"></h3>
+        <p data-i18n="hours1"></p>
+        <p data-i18n="hours2"></p>
+    </div>
+    <div class="contact-box">
+        <h3 data-i18n="address"></h3>
+        <p>ul. Barbera 12, Warszawa</p>
+        <p>Tel: +48 123 456 789</p>
+    </div>
+</div>
+</section>
+
+<footer data-i18n="footer"></footer>
+
+<script>
+const translations = {
+pl: {
+home:"Strona Główna",price:"Cennik",gallery:"Galeria",contact:"Kontakt",
+heroTitle:"KLASYKA. PRECYZJA. TWÓJ STYL.",
+heroText:"Tradycyjne rzemiosło w nowoczesnym wydaniu.",
+p1:"Strzyżenie Męskie",p2:"Strzyżenie Brody",
+p3:"Combo (Włosy + Broda)",p4:"Golenie Brzytwą",
+hours:"Godziny Otwarcia",
+hours1:"Pon–Pt: 10:00 – 20:00",
+hours2:"Sobota: 09:00 – 16:00",
+address:"Adres",
+footer:"© 2026 THE GENTLEMAN'S CUT. WSZYSTKIE PRAWA ZASTRZEŻONE."
+},
+en: {
+home:"Home",price:"Price List",gallery:"Gallery",contact:"Contact",
+heroTitle:"CLASS. PRECISION. YOUR STYLE.",
+heroText:"Traditional craftsmanship in a modern style.",
+p1:"Men's Haircut",p2:"Beard Trim",
+p3:"Combo (Hair + Beard)",p4:"Straight Razor Shave",
+hours:"Opening Hours",
+hours1:"Mon–Fri: 10:00 – 20:00",
+hours2:"Saturday: 09:00 – 16:00",
+address:"Address",
+footer:"© 2026 THE GENTLEMAN'S CUT. ALL RIGHTS RESERVED."
+}
+};
+
+function setLanguage(lang){
+document.documentElement.lang = lang;
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+el.textContent = translations[lang][el.dataset.i18n];
+});
+}
+setLanguage('pl');
+
+/* reveal on scroll */
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top < window.innerHeight - 100){
+sec.classList.add("show");
+}
+});
+});
+</script>
+
+</body>
+</html>
