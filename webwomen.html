@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PureBloom | Beauty Store</title>
+<link rel="stylesheet" href="webwomen.css">
+
+</head>
+
+<body>
+
+<nav>
+<div class="logo">PureBloom</div>
+
+<ul class="nav-links">
+<li><a href="#home">Start</a></li>
+<li><a href="#shop">Sklep</a></li>
+<li><a href="#contact">Kontakt</a></li>
+</ul>
+
+<div style="display:flex;gap:10px;align-items:center">
+<button id="langBtn">EN</button>
+<div class="cart">🛒 <span id="cartCount">0</span></div>
+</div>
+</nav>
+
+<header id="home" class="hero section">
+<h1>PureBloom</h1>
+<p id="heroText">Naturalne kosmetyki dla kobiet</p>
+</header>
+
+<section id="shop" class="section">
+
+<h2>Nasze produkty</h2>
+
+<div class="categories">
+<div class="cat" data-cat="all">Wszystko</div>
+<div class="cat" data-cat="kremy">Kremy</div>
+<div class="cat" data-cat="serum">Serum</div>
+<div class="cat" data-cat="makijaz">Makijaż</div>
+<div class="cat" data-cat="usta">Pielęgnacja ust</div>
+</div>
+
+<div class="products">
+
+<!-- PRODUCT 1 -->
+<div class="product" data-cat="kremy">
+<div class="badge">NEW</div>
+<div class="product-img"><img src="krem.png"></div>
+<h3>Krem różany</h3>
+<p class="price" data-pl="89 PLN" data-en="$21"></p>
+<button class="btn addCart">Dodaj do koszyka</button>
+</div>
+
+<!-- PRODUCT 2 -->
+<div class="product" data-cat="serum">
+<div class="product-img"><img src="serum.png"></div>
+<h3>Serum witaminowe</h3>
+<p class="price" data-pl="129 PLN" data-en="$29"></p>
+<button class="btn addCart">Dodaj do koszyka</button>
+</div>
+
+<!-- PRODUCT 3 SALE -->
+<div class="product" data-cat="usta">
+<div class="badge">SALE</div>
+<div class="product-img"><img src="balsam.png"></div>
+<h3>Balsam do ust</h3>
+<p class="price">
+<span class="old-price" data-pl="59 PLN" data-en="$14"></span>
+<span class="new-price" data-pl="39 PLN" data-en="$9"></span>
+</p>
+<button class="btn addCart">Dodaj do koszyka</button>
+</div>
+
+<!-- PRODUCT 4 -->
+<div class="product" data-cat="makijaz">
+<div class="product-img"><img src="podklad.png" alt=""></div>
+<h3>Podkład matujący</h3>
+<p class="price" data-pl="99 PLN" data-en="$24"></p>
+<button class="btn addCart">Dodaj do koszyka</button>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="section">
+<h2>Kontakt</h2>
+<div class="contact-box">
+<p>Email: contact@purebloom.com</p>
+<p>Instagram: @purebloom</p>
+</div>
+</section>
+
+<script>
+
+/* CART */
+let cart=0;
+document.querySelectorAll(".addCart").forEach(btn=>{
+btn.onclick=()=>{
+cart++;
+cartCount.textContent=cart;
+};
+});
+
+/* FILTER */
+document.querySelectorAll(".cat").forEach(cat=>{
+cat.onclick=()=>{
+const c=cat.dataset.cat;
+document.querySelectorAll(".product").forEach(p=>{
+p.style.display=(c==="all"||p.dataset.cat===c)?"block":"none";
+});
+};
+});
+
+/* LANGUAGE */
+
+let lang="pl";
+
+const text={
+pl:{
+nav:["Start","Sklep","Kontakt"],
+hero:"Naturalne kosmetyki dla kobiet",
+products:"Nasze produkty",
+cats:["Wszystko","Kremy","Serum","Makijaż","Pielęgnacja ust"],
+btn:"Dodaj do koszyka",
+contact:"Kontakt"
+},
+en:{
+nav:["Home","Shop","Contact"],
+hero:"Natural cosmetics for women",
+products:"Our products",
+cats:["All","Creams","Serums","Makeup","Lip care"],
+btn:"Add to cart",
+contact:"Contact"
+}
+};
+
+function translate(){
+
+document.querySelectorAll(".nav-links a")
+.forEach((a,i)=>a.textContent=text[lang].nav[i]);
+
+heroText.textContent=text[lang].hero;
+
+document.querySelector("#shop h2")
+.textContent=text[lang].products;
+
+document.querySelectorAll(".cat")
+.forEach((c,i)=>c.textContent=text[lang].cats[i]);
+
+document.querySelectorAll(".addCart")
+.forEach(b=>b.textContent=text[lang].btn);
+
+document.querySelector("#contact h2")
+.textContent=text[lang].contact;
+
+/* prices */
+document.querySelectorAll(".price").forEach(p=>{
+if(p.dataset.pl) p.textContent=p.dataset[lang];
+});
+
+document.querySelectorAll(".old-price")
+.forEach(p=>p.textContent=p.dataset[lang]);
+
+document.querySelectorAll(".new-price")
+.forEach(p=>p.textContent=p.dataset[lang]);
+
+}
+
+langBtn.onclick=()=>{
+lang=lang==="pl"?"en":"pl";
+langBtn.textContent=lang==="pl"?"EN":"PL";
+translate();
+};
+
+translate();
+
+</script>
+
+</body>
+</html>
