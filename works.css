@@ -1,61 +1,50 @@
+/* Core Layout Fixes */
+:root {
+    --max-width: 1440px;
+    --side-padding: 50px;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 .container {
     width: 100%;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--side-padding);
     box-sizing: border-box;
 }
 
-.logos-section {
-    padding: 100px 0;
+/* Hero Section - The fix for zooming */
+#hero {
+    min-height: 100vh;
     width: 100%;
-}
-
-.logos-section .label, 
-.logos-section .section-title {
-    margin-left: 50px !important; 
-    display: block;
-    text-align: left;
-}
-
-.logo-grid {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    gap: 60px 80px;
-    max-width: 90%;
-    margin: 80px auto 0 auto;
-    padding: 0 20px;
+    position: relative;
+    /* Update the path to your image below */
+    background: linear-gradient(to right, rgba(0,0,0,0.4), transparent), url('your-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; /* Scroll is safer for zoom/mobile than fixed */
 }
 
-.logo-item {
-    flex: 0 1 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.hero-content {
+    padding-left: var(--side-padding);
+    z-index: 2;
 }
 
-.logo-item img {
-    max-width: 1000px;
-    max-height: 140px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-}
-
-.logo-item:hover {
-    transform: translateY(-10px);
-}
-
+/* Main Grid */
 .works-full-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 80px 40px;
-    padding: 60px 50px;
+    padding: 100px 0;
 }
 
+/* Project Cards */
 .project-card {
     display: block;
     text-decoration: none;
@@ -68,7 +57,7 @@
     aspect-ratio: 16/11;
     overflow: hidden;
     border-radius: 12px;
-    background: var(--light-gray);
+    background: #1a1a1a;
 }
 
 .project-img-wrapper img {
@@ -110,40 +99,57 @@
     opacity: 1;
 }
 
-.project-details {
-    margin-top: 30px;
+/* Logos Section */
+.logos-section {
+    padding: 100px 0;
 }
 
-.project-cat {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--muted);
-    font-weight: 700;
-    margin-bottom: 8px;
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px 40px;
+    margin-top: 80px;
 }
 
-.project-details h3 {
-    font-family: "Syncopate", sans-serif;
-    font-size: 1.2rem;
-    text-transform: uppercase;
+.logo-item {
+    flex: 1 1 200px;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo-item img {
+    max-width: 180px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.7;
+    filter: brightness(0) invert(1); /* Makes logos white */
+}
+
+/* Footer */
+footer {
+    padding: 80px 0;
+    background: #000;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    :root {
+        --side-padding: 30px;
+    }
 }
 
 @media (max-width: 768px) {
-    .logos-section .label, 
-    .logos-section .section-title {
-        margin-left: 20px !important;
-    }
     .works-full-grid {
-        padding: 40px 20px;
         grid-template-columns: 1fr;
         gap: 50px;
     }
+    
     .logo-grid {
-        gap: 40px 30px;
-        margin-top: 50px;
-    }
-    .logo-item img {
-        max-width: 140px;
+        justify-content: center;
     }
 }
