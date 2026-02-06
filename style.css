@@ -512,4 +512,16 @@ footer {
     align-items: center;
     gap: 30px;
   }
+
+}
+
+body.dark {
+  --bg: #0b0b0f;
+  --text: #f4f4f5;
+  --muted: #a1a1aa;
+  --border: #27272a;
+  --light-gray: #18181b;
+}
+body.dark .navbar.scrolled {
+  background: rgba(10, 10, 15, 0.85);
 }
