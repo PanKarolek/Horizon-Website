@@ -542,7 +542,7 @@ body.dark #hero {
       rgba(7, 10, 25, 0.4) 60%,
       rgba(7, 10, 25, 0.05) 80%
     ),
-    url("sunrise.png") no-repeat center center / cover;
+    url("dark_sunrise.png") no-repeat center center / cover;
 }
 body.dark .sub-text,
 body.dark .hero-label,
@@ -615,3 +615,4 @@ body.dark .stats-bar {
 body.dark .stat-desc {
   color: #a1a1aa;
 }
+
