@@ -549,33 +549,23 @@ body.dark .hero-label,
 body.dark .hero-subtext {
   color: var(--muted);
 }
+/*HORIZON shine efekt*/
 body.dark .main-name {
-  color: #d1d5db; /* szarawy */
   background: linear-gradient(
-    110deg,
-    #d1d5db 45%,
-    #ff5a7a 50%,
-    #ff2d55 55%,
-    #d1d5db 60%
+    to right,
+    #b4b6c2 20%,     
+    #2a2f55 40%,    
+    #b4b6c2 60%,
+    #b4b6c2 80%
   );
-  background-size: 300% 100%;
-  background-position: 100% 0;
+  background-size: 200% auto;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: sunset-shine 6s ease-in-out infinite;
-  filter: drop-shadow(0 8px 20px rgba(255, 80, 100, 0.15));
+  animation: shine 5s linear infinite;
+  filter: drop-shadow(0 6px 18px rgba(60, 70, 120, 0.25));
 }
-@keyframes sunset-shine {
-  0% {
-    background-position: 120% 0;
-  }
-  50% {
-    background-position: -20% 0;
-  }
-  100% {
-    background-position: -20% 0;
-  }
-}
+
 
 body.dark .s-card,
 body.dark .work-item img,
@@ -625,5 +615,3 @@ body.dark .stats-bar {
 body.dark .stat-desc {
   color: #a1a1aa;
 }
-
-
