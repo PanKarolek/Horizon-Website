@@ -617,9 +617,6 @@ body.dark footer {
   border-top: 1px solid #1f2230;
 }
 body.dark footer p,
-body.dark footer i {
-  color: #b4b6c2;
-}
 body.dark .stats-bar {
   background: #1a1c22;
   color: #f4f4f5;
@@ -628,4 +625,5 @@ body.dark .stats-bar {
 body.dark .stat-desc {
   color: #a1a1aa;
 }
+
 
