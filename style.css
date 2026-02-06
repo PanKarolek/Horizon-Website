@@ -561,15 +561,8 @@ body.dark .lang-btn-modern:hover,
 body.dark .nav-cta:hover {
   background: #1a1c22;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
-
-TUTAJ
-
-
-
-
 body.dark .sub-text,
 body.dark .hero-label,
 body.dark .hero-subtext {
@@ -641,6 +634,7 @@ body.dark .stats-bar {
 body.dark .stat-desc {
   color: #a1a1aa;
 }
+
 
 
 
