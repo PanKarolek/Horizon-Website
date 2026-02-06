@@ -642,6 +642,15 @@ body.dark .stat-desc {
     backdrop-filter: blur(15px);
   }
 }
+/* tryb light */
+.logos-section.container {
+  background-color: #FFF; 
+}
+/* tryb dark */
+body.dark .logos-section.container {
+  background-color: #f4f4f5);
+}
+
 
 
 
