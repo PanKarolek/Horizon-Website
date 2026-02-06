@@ -162,19 +162,46 @@ body {
 .nav-cta:active {
   transform: scale(0.95);
 }
-
 #hero {
+  position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
   padding: 0 10%;
+  overflow: hidden;
+
   background:
     linear-gradient(
       to right,
       rgba(255, 255, 255, 0.95) 15%,
       rgba(255, 255, 255, 0.1) 80%
     ),
-    url("sunrise.png") no-repeat center center/cover;
+    url("sunrise.png") no-repeat center center / cover;
+}
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(7, 10, 25, 0.95) 15%,
+      rgba(15, 20, 60, 0.45) 60%,
+      rgba(10, 12, 40, 0.05) 80%
+    ),
+    url("dark_sunrise.png") no-repeat center center / cover;
+
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+}
+#hero > * {
+  position: relative;
+  z-index: 1;
+}
+body.dark #hero::before {
+  opacity: 1;
 }
 
 .hero-label {
@@ -534,16 +561,15 @@ body.dark .nav-cta:hover {
   background: #0a0a0a;
   transform: translateY(-2px);
 }
-body.dark #hero {
-  background:
-    linear-gradient(
-      to right,
-      rgba(7, 10, 25, 0.95) 15%,
-      rgba(7, 10, 25, 0.4) 60%,
-      rgba(7, 10, 25, 0.05) 80%
-    ),
-    url("dark_sunrise.png") no-repeat center center / cover;
-}
+
+
+
+
+TUTAJ
+
+
+
+
 body.dark .sub-text,
 body.dark .hero-label,
 body.dark .hero-subtext {
@@ -615,4 +641,5 @@ body.dark .stats-bar {
 body.dark .stat-desc {
   color: #a1a1aa;
 }
+
 
