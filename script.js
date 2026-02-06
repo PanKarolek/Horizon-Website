@@ -50,4 +50,29 @@ langToggle.addEventListener("click", () => {
     });
     langToggle.classList.remove("switching");
   }, 300);
+
 });
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector("i");
+const themeLabel = themeToggle.querySelector(".theme-label");
+
+// init (opcjonalnie – domyślnie light)
+setTheme(false);
+
+themeToggle.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark");
+  setTheme(isDark);
+});
+
+function setTheme(isDark) {
+  if (isDark) {
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+    themeLabel.textContent = "Light";
+  } else {
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+    themeLabel.textContent = "Dark";
+  }
+}
