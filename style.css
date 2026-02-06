@@ -635,7 +635,10 @@ body.dark .stat-desc {
   color: #a1a1aa;
 }
 
-
-
-
-
+@media (max-width: 768px){
+  .navbar{
+    padding: 10px 5%;
+    background: var(--bg);
+    backdrop-filter: blur(15px);
+  }
+}
