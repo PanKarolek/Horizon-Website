@@ -648,8 +648,9 @@ body.dark .stat-desc {
 }
 /* tryb dark */
 body.dark .logos-section.container {
-  background-color: #bfbbbb;
+  background-color: lightgray;
 }
+
 
 
 
