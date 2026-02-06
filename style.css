@@ -522,11 +522,6 @@ footer {
   .nav-actions {
     flex: initial;
   }
-  .nav-actions{
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-  }
   .main-name {
     font-size: 13vw !important;
   }
@@ -647,4 +642,5 @@ body.dark .stat-desc {
     backdrop-filter: blur(15px);
   }
 }
+
 
