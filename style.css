@@ -634,9 +634,6 @@ body.dark .stats-bar {
 body.dark .stat-desc {
   color: #a1a1aa;
 }
-body.dark .logos-section.container {
-    background-color: #0d0f18;
-}
 
 @media (max-width: 768px){
   .navbar{
@@ -645,6 +642,7 @@ body.dark .logos-section.container {
     backdrop-filter: blur(15px);
   }
 }
+
 
 
 
