@@ -642,7 +642,8 @@ body.dark .stat-desc {
     backdrop-filter: blur(15px);
   }
 }
-.logos-section.container {
+body.dark .logos-section.container {
     background-color: #0d0f18;
 }
+
 
