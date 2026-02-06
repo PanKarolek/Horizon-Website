@@ -551,18 +551,18 @@ body.dark {
 }
 body.dark .lang-btn-modern,
 body.dark .nav-cta {
-  background: #000;
-  color: #fff;
-  border: 1px solid #222;
-  box-shadow: none;
+  background: #0d0f18;
+  color: #f4f4f5;
+  border: 1px solid #1f2230;
+  box-shadow: 0 2px 0 #1f2230;
+  transform: translateY(0);
 }
 body.dark .lang-btn-modern:hover,
 body.dark .nav-cta:hover {
-  background: #0a0a0a;
+  background: #1a1c22;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
-
 
 
 TUTAJ
@@ -641,5 +641,6 @@ body.dark .stats-bar {
 body.dark .stat-desc {
   color: #a1a1aa;
 }
+
 
 
