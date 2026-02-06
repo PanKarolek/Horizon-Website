@@ -512,16 +512,84 @@ footer {
     align-items: center;
     gap: 30px;
   }
-
 }
 
+/*CSS PO ZMIANIE NA TRYB CIEMNY - oliwka*/
 body.dark {
-  --bg: #0b0b0f;
+  --bg: #07080c;
   --text: #f4f4f5;
-  --muted: #a1a1aa;
-  --border: #27272a;
-  --light-gray: #18181b;
+  --muted: #b4b6c2;
+  --border: #1f2230;
+  --light-gray: #0d0f18; 
+}
+body.dark .lang-btn-modern,
+body.dark .nav-cta {
+  background: #000;
+  color: #fff;
+  border: 1px solid #222;
+  box-shadow: none;
+}
+body.dark .lang-btn-modern:hover,
+body.dark .nav-cta:hover {
+  background: #0a0a0a;
+  transform: translateY(-2px);
+}
+body.dark #hero {
+  background:
+    linear-gradient(
+      to right,
+      rgba(7, 10, 25, 0.95) 15%,
+      rgba(7, 10, 25, 0.4) 60%,
+      rgba(7, 10, 25, 0.05) 80%
+    ),
+    url("sunrise.png") no-repeat center center / cover;
+}
+body.dark .sub-text,
+body.dark .hero-label,
+body.dark .hero-subtext {
+  color: var(--muted);
+}
+body.dark .main-name {
+  background: linear-gradient(
+    90deg,
+    #ff5a7a,
+    #ff2d55,
+    #ff7a90,
+    #ff2d55
+  );
+  background-size: 300% auto;
+  filter: drop-shadow(0 10px 30px rgba(255, 45, 85, 0.25));
+}
+body.dark .s-card,
+body.dark .work-item img,
+body.dark .contact-area,
+body.dark footer {
+  background: #000;
+  color: #fff;
+}
+body.dark .s-card::before {
+  background: #1a1a1a;
+}
+
+body.dark .s-card:hover h3,
+body.dark .s-card:hover p,
+body.dark .s-card:hover .s-link {
+  color: #e5e7eb;
+}
+
+body.dark .s-card:hover .icon-box {
+  background: rgba(255, 255, 255, 0.08);
+}
+body.dark .btn-survey {
+  background: #1a1a1a;
+  color: #000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .btn-survey:hover {
+  background: #222;
 }
 body.dark .navbar.scrolled {
-  background: rgba(10, 10, 15, 0.85);
+  background: rgba(5, 7, 20, 0.8);
+  backdrop-filter: blur(18px);
 }
