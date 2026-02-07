@@ -765,8 +765,11 @@ body.dark .logos-section.container {
   border: 1px solid var(--border);
   border-radius: 20px;
   background: var(--light-gray);
-  transition: var(--transition);
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 
 body.dark .team-card {
   background: #0b0d14;
@@ -786,6 +789,25 @@ body.dark .team-card {
 }
 
 .team-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
 }
+.team-card h4,
+.team-card p {
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-card:hover h4 {
+  transform: translateY(-2px);
+}
+
+.team-card:hover p {
+  transform: translateY(-4px);
+}
+.team-card:hover h4 {
+  color: var(--text);
+}
+
 /*koniec boxy o nas  */
