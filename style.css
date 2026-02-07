@@ -786,9 +786,10 @@ body.dark .team-card {
   font-size: 0.9rem;
   line-height: 1.7;
   color: var(--muted);
+  min-height: 85px;
 }
 
-.team-card:hover .team-name {
+.team-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
 }
@@ -811,19 +812,52 @@ body.dark .team-card {
 }
 
 .team-name {
-  display: inline-block;
-  margin-top: 18px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  display: block;
+  margin-top: 22px;
+  font-family: "Syncopate", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text);
-  opacity: 0.6;
+  opacity: 0.85;
   transition:
-    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.team-card:hover .team-name {
+  transform: translateY(-4px);
+  opacity: 1;
+}
+.team-name::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+  .team-card p {
+    min-height: auto;
+  }
+  .team-card,
+  .team-card h4,
+  .team-card p,
+  .team-name {
+    transform: none !important;
+    transition: none !important;
+  }
+  .team-name {
+    margin-top: 16px;
+    font-size: 0.75rem;
+    opacity: 1;
+  }
+
+}
+
+
 /*koniec boxy o nas  */
+
 
 
