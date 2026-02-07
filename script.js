@@ -54,7 +54,6 @@ function applyLang(lang, fast = false) {
     targets.forEach(el => el.classList.add("switching"));
   }
 
-  // 1️⃣ czekamy aż opacity spadnie
   setTimeout(() => {
     langLabel.innerText = lang === "en" ? "PL" : "EN";
 
@@ -65,21 +64,18 @@ function applyLang(lang, fast = false) {
       );
     }
 
-    // 2️⃣ zmieniamy tekst
-    targets.forEach(el => {
-      const newText = el.getAttribute(`data-${lang}`);
-      if (newText) el.textContent = newText;
-    });
+  targets.forEach(el => el.classList.add("switching"));
 
-    // 3️⃣ dajemy przeglądarce 1 frame
-    requestAnimationFrame(() => {
-      targets.forEach(el => el.classList.remove("switching"));
-      langToggle.classList.remove("switching");
-    });
+setTimeout(() => {
+  targets.forEach(el => {
+    const newText = el.getAttribute(`data-${lang}`);
+    if (newText) el.textContent = newText;
+  });
 
-  }, fast ? 0 : 250);
-}
-
+  requestAnimationFrame(() => {
+    targets.forEach(el => el.classList.remove("switching"));
+  });
+}, fast ? 0 : 250);
 
 applyTheme(currentTheme, true);
 applyLang(currentLang, true);
@@ -95,6 +91,7 @@ langToggle.addEventListener("click", () => {
   localStorage.setItem("horizon_lang", currentLang);
   applyLang(currentLang);
 });
+
 
 
 
