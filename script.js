@@ -56,20 +56,26 @@ function applyLang(lang, fast = false) {
 
   setTimeout(() => {
     langLabel.innerText = lang === "en" ? "PL" : "EN";
-    if (surveyBtn) surveyBtn.setAttribute("href", surveyBtn.getAttribute(`data-${lang}-link`));
+
+    if (surveyBtn) {
+      surveyBtn.setAttribute(
+        "href",
+        surveyBtn.getAttribute(`data-${lang}-link`)
+      );
+    }
 
     targets.forEach(el => {
       const newText = el.getAttribute(`data-${lang}`);
-      el.childNodes.forEach(node => {
-        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "") {
-          node.textContent = newText;
-        }
-      });
+      if (newText) {
+        el.textContent = newText;
+      }
       el.classList.remove("switching");
     });
+
     langToggle.classList.remove("switching");
   }, fast ? 0 : 300);
 }
+
 
 applyTheme(currentTheme, true);
 applyLang(currentLang, true);
@@ -85,3 +91,4 @@ langToggle.addEventListener("click", () => {
   localStorage.setItem("horizon_lang", currentLang);
   applyLang(currentLang);
 });
+
