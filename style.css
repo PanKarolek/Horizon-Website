@@ -671,21 +671,16 @@ body.dark .logos-section.container {
   background-color: rgb(0, 0, 0);
 }
 
-@media (max-width: 1080px) {
-  .cursor {
-    display: none;
-  }
-  
-  * {
-    cursor: auto !important;
-  }
+@media (max-width: 768px) {
+  .cursor { display: none; }
+  * { cursor: auto !important; }
 
   .navbar {
-    padding: 12px 3%;
+    padding: 10px 3%;
   }
 
   .main-logo {
-    height: 16px;
+    height: 14px; 
   }
 
   .nav-menu {
@@ -694,6 +689,7 @@ body.dark .logos-section.container {
 
   .nav-link {
     font-size: 0.55rem;
+    white-space: nowrap;
   }
 
   .theme-label, 
@@ -709,10 +705,22 @@ body.dark .logos-section.container {
     padding: 8px;
     min-width: 32px;
     justify-content: center;
+    box-shadow: none;
   }
 
   .nav-cta {
-    padding: 8px 10px;
+    padding: 6px 10px;
     font-size: 0.55rem;
+    border-radius: 6px;
+  }
+
+  .stats-bar {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 5%;
+  }
+
+  .stat-num {
+    font-size: 1.8rem;
   }
 }
