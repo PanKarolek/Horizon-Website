@@ -44,20 +44,41 @@ function applyTheme(theme, fast = false) {
   }
 }
 
-function applyLang(lang, fast = false) { 
-  const targets = document.querySelectorAll(".translatable"); 
-  const surveyBtn = document.getElementById("survey-btn"); 
-  const langLabel = langToggle.querySelector(".lang-label"); 
-  if (!fast) { langToggle.classList.add("switching"); targets.forEach(el => el.classList.add("switching"));
-} 
-  setTimeout(() => { 
+function applyLang(lang, fast = false) {
+  const targets = document.querySelectorAll(".translatable");
+  const surveyBtn = document.getElementById("survey-btn");
+  const langLabel = langToggle.querySelector(".lang-label");
+
+  if (!fast) {
+    langToggle.classList.add("switching");
+    targets.forEach(el => el.classList.add("switching"));
+  }
+
+  // 1️⃣ czekamy aż opacity spadnie
+  setTimeout(() => {
     langLabel.innerText = lang === "en" ? "PL" : "EN";
-    if (surveyBtn) surveyBtn.setAttribute("href", surveyBtn.getAttribute(data-${lang}-link)); 
-    targets.forEach(el => { 
-      const newText = el.getAttribute(data-${lang});
-      el.childNodes.forEach(node => { if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "") { node.textContent = newText; } });
-      el.classList.remove("switching"); });
-    langToggle.classList.remove("switching"); }, fast ? 0 : 300); }
+
+    if (surveyBtn) {
+      surveyBtn.setAttribute(
+        "href",
+        surveyBtn.getAttribute(`data-${lang}-link`)
+      );
+    }
+
+    // 2️⃣ zmieniamy tekst
+    targets.forEach(el => {
+      const newText = el.getAttribute(`data-${lang}`);
+      if (newText) el.textContent = newText;
+    });
+
+    // 3️⃣ dajemy przeglądarce 1 frame
+    requestAnimationFrame(() => {
+      targets.forEach(el => el.classList.remove("switching"));
+      langToggle.classList.remove("switching");
+    });
+
+  }, fast ? 0 : 250);
+}
 
 
 applyTheme(currentTheme, true);
@@ -74,5 +95,6 @@ langToggle.addEventListener("click", () => {
   localStorage.setItem("horizon_lang", currentLang);
   applyLang(currentLang);
 });
+
 
 
