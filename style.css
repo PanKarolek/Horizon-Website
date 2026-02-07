@@ -70,7 +70,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
+  padding: 20px 5%;
   position: fixed;
   width: 100%;
   top: 0;
@@ -78,8 +78,19 @@ body {
   transition: var(--transition);
 }
 
+.main-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+  transition: height 0.3s ease;
+}
+
+.navbar.scrolled .main-logo {
+  height: 28px;
+} 
+
 .navbar.scrolled {
-  padding: 15px 8%;
+  padding: 15px 5%;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--border);
@@ -90,29 +101,37 @@ body.dark .navbar.scrolled {
   backdrop-filter: blur(18px);
 }
 
-.logo-container {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.main-logo {
-  height: 32px;
-}
-
 .nav-menu {
-  flex: 0 0 auto;
   display: flex;
   list-style: none;
-  gap: 40px;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   position: relative;
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: var(--text);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .nav-link::after {
@@ -656,36 +675,42 @@ body.dark .logos-section.container {
 }
 
 @media (max-width: 768px) {
-  .cursor,
-  .nav-menu {
+  .cursor {
     display: none;
   }
+  
   * {
     cursor: auto !important;
   }
+
   .navbar {
-    padding: 10px 5%;
-    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 3%;
   }
-  .logo-container,
+
+  .nav-menu {
+    display: flex; 
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 0.6rem;
+  }
+
+  .nav-cta {
+    padding: 6px 10px;
+    font-size: 0.6rem;
+  }
+
+  .lang-btn-modern {
+    padding: 5px 8px;
+    font-size: 0.6rem;
+  }
+
+  .main-logo {
+    height: 18px;
+  }
+
   .nav-actions {
-    flex: initial;
-  }
-  .main-name {
-    font-size: 13vw !important;
-  }
-  .stats-bar {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .services-grid,
-  .work-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .footer-wrap {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 30px;
+    gap: 5px;
   }
 }
