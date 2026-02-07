@@ -686,7 +686,7 @@ body.dark .logos-section.container {
   }
 
   .nav-menu {
-    display: none; /* Hiding middle links to prevent button overflow */
+    display: none;  
   }
 
   .nav-actions {
