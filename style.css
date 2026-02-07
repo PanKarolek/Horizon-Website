@@ -672,55 +672,47 @@ body.dark .logos-section.container {
 }
 
 @media (max-width: 768px) {
-  .cursor { display: none; }
-  * { cursor: auto !important; }
 
   .navbar {
-    padding: 10px 3%;
-  }
-
-  .main-logo {
-    height: 14px; 
-  }
-
-  .nav-menu {
+    padding: 10px 16px;
     gap: 10px;
   }
 
-  .nav-link {
-    font-size: 0.55rem;
-    white-space: nowrap;
-  }
 
-  .theme-label, 
-  .lang-label {
-    display: none;
+
+  .nav-menu {
+    position: static;
+    transform: none;
+    gap: 14px;
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   .nav-actions {
-    gap: 5px;
+    flex: 0 0 auto;
+    gap: 6px;
+  }
+
+
+
+  .nav-link {
+    font-size: 0.65rem;
   }
 
   .lang-btn-modern {
-    padding: 8px;
-    min-width: 32px;
-    justify-content: center;
-    box-shadow: none;
+    padding: 6px 8px;
   }
 
   .nav-cta {
-    padding: 6px 10px;
-    font-size: 0.55rem;
-    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.65rem;
   }
 
-  .stats-bar {
-    flex-direction: column;
-    gap: 20px;
-    padding: 40px 5%;
+
+
+  .navbar > * {
+    min-width: 0;
   }
 
-  .stat-num {
-    font-size: 1.8rem;
-  }
 }
+
