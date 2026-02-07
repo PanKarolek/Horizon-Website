@@ -855,9 +855,42 @@ body.dark .team-card {
   }
 
 }
-
-
 /*koniec boxy o nas  */
+/* link do filmiku */
+.survey-help {
+  margin-top: 24px;
+  text-align: center;
+}
 
+.survey-help-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--muted);
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.survey-help-link:hover {
+  color: var(--text);
+}
+
+.help-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+  transform: translateY(-1px);
+  transition: transform 0.3s ease;
+}
+
+.survey-help-link:hover .help-arrow {
+  transform: translateY(4px);
+}
+/*koniec linka do filmiku  */
 
