@@ -84,4 +84,17 @@ langToggle.addEventListener("click", () => {
   currentLang = currentLang === "en" ? "pl" : "en";
   localStorage.setItem("horizon_lang", currentLang);
   applyLang(currentLang);
+
 });
+
+// Funkcja ustawiająca odpowiedni link w zależności od języka
+function updateSurveyHelpLink(lang) {
+  const link = document.querySelector('.survey-help-link');
+  if (!link) return;
+
+  if (lang === 'pl') {
+    link.href = link.getAttribute('data-pl-link');
+  } else {
+    link.href = link.getAttribute('data-en-link');
+  }
+}
