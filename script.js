@@ -1,4 +1,4 @@
-AOS.init({ duration: 1000, once: true });
+AOS.init({ duration: 1000, once: false });
 
 window.addEventListener("scroll", function () {
   const nav = document.querySelector(".navbar");
@@ -44,37 +44,20 @@ function applyTheme(theme, fast = false) {
   }
 }
 
-function applyLang(lang, fast = false) {
-  const targets = document.querySelectorAll(".translatable");
-  const surveyBtn = document.getElementById("survey-btn");
-  const langLabel = langToggle.querySelector(".lang-label");
-
-  if (!fast) {
-    langToggle.classList.add("switching");
-    targets.forEach(el => el.classList.add("switching"));
-  }
-
-  setTimeout(() => {
+function applyLang(lang, fast = false) { 
+  const targets = document.querySelectorAll(".translatable"); 
+  const surveyBtn = document.getElementById("survey-btn"); 
+  const langLabel = langToggle.querySelector(".lang-label"); 
+  if (!fast) { langToggle.classList.add("switching"); targets.forEach(el => el.classList.add("switching"));
+} 
+  setTimeout(() => { 
     langLabel.innerText = lang === "en" ? "PL" : "EN";
-
-    if (surveyBtn) {
-      surveyBtn.setAttribute(
-        "href",
-        surveyBtn.getAttribute(`data-${lang}-link`)
-      );
-    }
-
-    targets.forEach(el => {
-      const newText = el.getAttribute(`data-${lang}`);
-      if (newText) {
-        el.textContent = newText;
-      }
-      el.classList.remove("switching");
-    });
-
-    langToggle.classList.remove("switching");
-  }, fast ? 0 : 300);
-}
+    if (surveyBtn) surveyBtn.setAttribute("href", surveyBtn.getAttribute(data-${lang}-link)); 
+    targets.forEach(el => { 
+      const newText = el.getAttribute(data-${lang});
+      el.childNodes.forEach(node => { if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "") { node.textContent = newText; } });
+      el.classList.remove("switching"); });
+    langToggle.classList.remove("switching"); }, fast ? 0 : 300); }
 
 
 applyTheme(currentTheme, true);
