@@ -64,7 +64,7 @@ function applyLang(lang, fast = false) {
       );
     }
 
-  targets.forEach(el => el.classList.add("switching"));
+ targets.forEach(el => el.classList.add("switching"));
 
 setTimeout(() => {
   targets.forEach(el => {
@@ -76,6 +76,7 @@ setTimeout(() => {
     targets.forEach(el => el.classList.remove("switching"));
   });
 }, fast ? 0 : 250);
+
 
 applyTheme(currentTheme, true);
 applyLang(currentLang, true);
@@ -91,6 +92,7 @@ langToggle.addEventListener("click", () => {
   localStorage.setItem("horizon_lang", currentLang);
   applyLang(currentLang);
 });
+
 
 
 
