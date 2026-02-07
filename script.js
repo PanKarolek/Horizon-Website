@@ -69,6 +69,8 @@ function applyLang(lang, fast = false) {
     });
     langToggle.classList.remove("switching");
   }, fast ? 0 : 300);
+
+updateSurveyHelpLink(lang);
 }
 
 applyTheme(currentTheme, true);
@@ -100,7 +102,7 @@ function updateSurveyHelpLink(lang) {
   if (span) {
     span.textContent = span.getAttribute(`data-${lang}`);
   }
-  updateSurveyHelpLink(lang);
 }
+
 
 
