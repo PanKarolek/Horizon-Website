@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio Archive of Horizon Agency - Selected digital projects.">
     <title>Our Archive | Horizon Agency</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -12,12 +13,11 @@
     <link rel="stylesheet" href="works.css" />
 </head>
 <body>
-
-    <div class="cursor"></div>
+    <div class="cursor" aria-hidden="true"></div>
 
     <nav class="navbar">
         <div class="logo-container">
-            <a href="index.html"><img src="horizon.png" alt="Horizon Logo" class="main-logo" /></a>
+            <a href="index.html" aria-label="Home"><img src="horizon.png" alt="Horizon Logo" class="main-logo" /></a>
         </div>
         <ul class="nav-menu">
             <li><a href="index.html#services" class="nav-link translatable" data-en="Services" data-pl="Usługi">Services</a></li>
@@ -25,12 +25,12 @@
             <li><a href="index.html#contact" class="nav-link translatable" data-en="Contact" data-pl="Kontakt">Contact</a></li>
         </ul>
         <div class="nav-actions">
-            <button id="lang-toggle" class="lang-btn-modern">
-                <i class="fas fa-language"></i>
+            <button id="lang-toggle" class="lang-btn-modern" aria-label="Switch Language">
+                <i class="fas fa-language" aria-hidden="true"></i>
                 <span class="lang-label">PL</span>
             </button>
             <button id="theme-toggle" class="lang-btn-modern" aria-label="Toggle theme">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-moon" aria-hidden="true"></i>
                 <span class="theme-label">Dark</span>
             </button>
             <a href="index.html" class="nav-cta translatable" data-en="Back Home" data-pl="Powrót">Back Home</a>
@@ -53,7 +53,7 @@
         <div class="works-full-grid">
             <a href="barber.html" class="project-card work-item" data-aos="fade-up">
                 <div class="project-img-wrapper">
-                    <img src="example1.png" alt="Project 1">
+                    <img src="example1.png" alt="THE GENTLEMAN'S CUT Case Study" loading="lazy">
                     <div class="project-overlay">
                         <span class="view-text translatable" data-en="View Case Study" data-pl="Zobacz Projekt">View Case Study</span>
                     </div>
@@ -63,10 +63,9 @@
                     <h3 class="translatable" data-en="THE GENTLEMAN'S CUT" data-pl="THE GENTLEMAN'S CUT">THE GENTLEMAN'S CUT</h3>
                 </div>
             </a>
-
             <a href="coding.html" class="project-card work-item" data-aos="fade-up" data-aos-delay="100">
                 <div class="project-img-wrapper">
-                    <img src="example2.png" alt="Project 2">
+                    <img src="example2.png" alt="ALEX.TECH ECOSYSTEM Case Study" loading="lazy">
                     <div class="project-overlay">
                         <span class="view-text translatable" data-en="View Case Study" data-pl="Zobacz Projekt">View Case Study</span>
                     </div>
@@ -76,10 +75,9 @@
                     <h3 class="translatable" data-en="ALEX.TECH ECOSYSTEM" data-pl="EKOSYSTEM ALEX.TECH">ALEX.TECH ECOSYSTEM</h3>
                 </div>
             </a>
-
             <a href="trees.html" class="project-card work-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="project-img-wrapper">
-                    <img src="example3.png" alt="Project 3">
+                    <img src="example3.png" alt="GREENROOT INITIATIVE Case Study" loading="lazy">
                     <div class="project-overlay">
                         <span class="view-text translatable" data-en="View Case Study" data-pl="Zobacz Projekt">View Case Study</span>
                     </div>
@@ -89,10 +87,9 @@
                     <h3 class="translatable" data-en="GREENROOT INITIATIVE" data-pl="INICJATYWA GREENROOT">GREENROOT INITIATIVE</h3>
                 </div>
             </a>
-
             <a href="webwomen.html" class="project-card work-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="project-img-wrapper">
-                    <img src="example4.png" alt="Project 4">
+                    <img src="example4.png" alt="PUREBLOOM Case Study" loading="lazy">
                     <div class="project-overlay">
                         <span class="view-text translatable" data-en="View Case Study" data-pl="Zobacz Projekt">View Case Study</span>
                     </div>
@@ -109,24 +106,12 @@
         <p class="label translatable" data-en="Visual Identities" data-pl="Tożsamości Wizualne">Visual Identities</p>
         <h2 class="section-title translatable" data-en="Logos we've crafted" data-pl="Zaprojektowane logotypy">Logos we've crafted</h2>
         <div class="logo-grid">
-            <div class="logo-item">
-                <img src="horizon.png" alt="Horizon">
-            </div>
-            <div class="logo-item">
-                <img src="logo2.png" alt="Logo 2">
-            </div>
-            <div class="logo-item">
-                <img src="logo3.png" alt="Logo 3">
-            </div>
-            <div class="logo-item">
-                <img src="logo4.png" alt="Logo 4">
-            </div>
-            <div class="logo-item">
-                <img src="logo5.png" alt="Logo 5">
-            </div>
-            <div class="logo-item">
-                <img src="logo6.png" alt="Logo 6">
-            </div>
+            <div class="logo-item"><img src="horizon.png" alt="Horizon Logo"></div>
+            <div class="logo-item"><img src="logo2.png" alt="Client Logo 2"></div>
+            <div class="logo-item"><img src="logo3.png" alt="Client Logo 3"></div>
+            <div class="logo-item"><img src="logo4.png" alt="Client Logo 4"></div>
+            <div class="logo-item"><img src="logo5.png" alt="Client Logo 5"></div>
+            <div class="logo-item"><img src="logo6.png" alt="Client Logo 6"></div>
         </div>
     </section>
 
@@ -143,5 +128,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
