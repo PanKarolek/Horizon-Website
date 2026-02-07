@@ -1,4 +1,4 @@
-AOS.init({ duration: 1000, once: false });
+AOS.init({ duration: 1000, once: true });
 
 window.addEventListener("scroll", function () {
   const nav = document.querySelector(".navbar");
@@ -91,4 +91,5 @@ langToggle.addEventListener("click", () => {
   localStorage.setItem("horizon_lang", currentLang);
   applyLang(currentLang);
 });
+
 
