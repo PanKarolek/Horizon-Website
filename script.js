@@ -23,7 +23,11 @@ const themeToggle = document.getElementById("theme-toggle");
 let currentLang = localStorage.getItem("horizon_lang") || "en";
 let currentTheme = localStorage.getItem("horizon_theme") || "light";
 
-function applyTheme(theme) {
+function applyTheme(theme, fast = false) {
+  if (fast) {
+    document.documentElement.classList.add("no-transition");
+  }
+
   if (theme === "dark") {
     document.body.classList.add("dark");
     themeToggle.querySelector("i").className = "fas fa-sun";
@@ -32,6 +36,11 @@ function applyTheme(theme) {
     document.body.classList.remove("dark");
     themeToggle.querySelector("i").className = "fas fa-moon";
     themeToggle.querySelector(".theme-label").innerText = "DARK";
+  }
+
+  if (fast) {
+    void document.documentElement.offsetHeight;
+    document.documentElement.classList.remove("no-transition");
   }
 }
 
@@ -62,13 +71,13 @@ function applyLang(lang, fast = false) {
   }, fast ? 0 : 300);
 }
 
-applyTheme(currentTheme);
+applyTheme(currentTheme, true);
 applyLang(currentLang, true);
 
 themeToggle.addEventListener("click", () => {
   currentTheme = document.body.classList.toggle("dark") ? "dark" : "light";
   localStorage.setItem("horizon_theme", currentTheme);
-  applyTheme(currentTheme);
+  applyTheme(currentTheme, false);
 });
 
 langToggle.addEventListener("click", () => {

@@ -22,6 +22,14 @@ body.dark {
   cursor: none;
 }
 
+.no-transition,
+.no-transition *,
+.no-transition *::before,
+.no-transition *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
