@@ -671,9 +671,14 @@ body.dark .logos-section.container {
   background-color: rgb(0, 0, 0);
 }
 
-@media (max-width: 850px) {
-  .cursor { display: none; }
-  * { cursor: auto !important; }
+@media (max-width: 1080px) {
+  .cursor {
+    display: none;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
 
   .navbar {
     padding: 12px 3%;
@@ -684,16 +689,15 @@ body.dark .logos-section.container {
   }
 
   .nav-menu {
-    gap: 12px;
+    gap: 10px;
   }
 
   .nav-link {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
   }
 
-
   .theme-label, 
-  .lang-text-pc {
+  .lang-label {
     display: none;
   }
 
@@ -701,14 +705,14 @@ body.dark .logos-section.container {
     gap: 5px;
   }
 
-  .lang-btn-modern, #theme-toggle {
+  .lang-btn-modern {
     padding: 8px;
-    min-width: 35px;
+    min-width: 32px;
     justify-content: center;
   }
 
   .nav-cta {
     padding: 8px 10px;
-    font-size: 0.6rem;
+    font-size: 0.55rem;
   }
 }
