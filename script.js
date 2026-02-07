@@ -100,5 +100,7 @@ function updateSurveyHelpLink(lang) {
   if (span) {
     span.textContent = span.getAttribute(`data-${lang}`);
   }
+  updateSurveyHelpLink(lang);
 }
+
 
