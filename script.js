@@ -92,9 +92,13 @@ function updateSurveyHelpLink(lang) {
   const link = document.querySelector('.survey-help-link');
   if (!link) return;
 
-  if (lang === 'pl') {
-    link.href = link.getAttribute('data-pl-link');
-  } else {
-    link.href = link.getAttribute('data-en-link');
+  // zmiana href w zależności od języka
+  link.href = link.getAttribute(`data-${lang}-link`);
+
+  // zmiana tekstu linku
+  const span = link.querySelector('.translatable');
+  if (span) {
+    span.textContent = span.getAttribute(`data-${lang}`);
   }
 }
+
