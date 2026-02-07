@@ -790,3 +790,7 @@ body.dark .team-card {
   transform: translateY(-6px);
 }
 /*koniec styli sekcji O nas  */
+
+.translatable {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
