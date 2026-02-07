@@ -79,12 +79,9 @@ body {
 }
 
 .main-logo {
-  height: 28px;
+  height: 22px;
   width: auto;
-  display: block;
-  transition: height 0.3s ease;
 }
-
 .navbar.scrolled .main-logo {
   height: 28px;
 } 
@@ -108,6 +105,12 @@ body.dark .navbar.scrolled {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .nav-link {
@@ -668,27 +671,19 @@ body.dark .logos-section.container {
   background-color: rgb(0, 0, 0);
 }
 
-@media (max-width: 1024px) {
-  .work-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
-  .cursor {
-    display: none;
-  }
-  
-  * {
-    cursor: auto !important;
-  }
+  .cursor { display: none; }
+  * { cursor: auto !important; }
 
   .navbar {
-    padding: 10px 3%;
+    padding: 12px 3%;
+  }
+
+  .main-logo {
+    height: 16px;
   }
 
   .nav-menu {
-    display: flex; 
     gap: 12px;
   }
 
@@ -696,21 +691,24 @@ body.dark .logos-section.container {
     font-size: 0.6rem;
   }
 
-  .nav-cta {
-    padding: 6px 10px;
-    font-size: 0.6rem;
-  }
 
-  .lang-btn-modern {
-    padding: 5px 8px;
-    font-size: 0.6rem;
-  }
-
-  .main-logo {
-    height: 18px;
+  .theme-label, 
+  .lang-text-pc {
+    display: none;
   }
 
   .nav-actions {
     gap: 5px;
+  }
+
+  .lang-btn-modern, #theme-toggle {
+    padding: 8px;
+    min-width: 35px;
+    justify-content: center;
+  }
+
+  .nav-cta {
+    padding: 8px 10px;
+    font-size: 0.6rem;
   }
 }
