@@ -34,7 +34,7 @@ langToggle.addEventListener("click", () => {
 
   setTimeout(() => {
     langToggle.querySelector(".lang-label").innerText = currentLang === "en" ? "PL" : "EN";
-    
+
     if (surveyBtn) {
       surveyBtn.setAttribute("href", surveyBtn.getAttribute(`data-${currentLang}-link`));
     }
@@ -50,22 +50,25 @@ langToggle.addEventListener("click", () => {
     });
     langToggle.classList.remove("switching");
   }, 300);
-
 });
 
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = themeToggle.querySelector("i");
 const themeLabel = themeToggle.querySelector(".theme-label");
+const storedTheme = localStorage.getItem("horizon_theme");
+const initialIsDark = storedTheme ? storedTheme === "dark" : document.documentElement.classList.contains("dark");
 
-// init (opcjonalnie – domyślnie light)
-setTheme(false);
+setTheme(initialIsDark);
 
 themeToggle.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark");
+  const isDark = !document.body.classList.contains("dark");
+  localStorage.setItem("horizon_theme", isDark ? "dark" : "light");
   setTheme(isDark);
 });
 
 function setTheme(isDark) {
+  document.body.classList.toggle("dark", isDark);
+  document.documentElement.classList.toggle("dark", isDark);
   if (isDark) {
     themeIcon.classList.remove("fa-moon");
     themeIcon.classList.add("fa-sun");
