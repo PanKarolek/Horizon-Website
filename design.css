@@ -1,5 +1,91 @@
-/*PROCESS SECTIOn */
+/* --- Sekcja: What we do / Co tworzymy --- */
+.description-area {
+  padding: 120px 10%;
+  background: var(--light-gray);
+  color: var(--text);
+  text-align: left;
+}
 
+body.dark .description-area {
+  background: #0d0f18;
+  color: #fff;
+}
+
+.description-area .section-title {
+  font-family: "Syncopate", sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 50px;
+}
+
+.description-area .description-text h3 {
+  font-family: "Syncopate", sans-serif;
+  font-size: 1.1rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+body.dark .description-area .description-text h3 {
+  color: #fff;
+}
+
+.description-area .description-text p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 100%;
+  color: var(--text);
+  margin-bottom: 15px;
+}
+
+body.dark .description-area .description-text p {
+  color: #d1d1d1;
+}
+
+/* AOS delay: płynne wjeżdżanie od lewej */
+[data-aos="fade-right"] {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition-property: opacity, transform;
+  transition-timing-function: ease-out;
+}
+
+@media (max-width: 1024px) {
+  .description-area {
+    padding: 80px 8%;
+  }
+  .description-area .section-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  .description-area .description-text h3 {
+    font-size: 1rem;
+  }
+  .description-area .description-text p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .description-area {
+    padding: 60px 5%;
+  }
+  .description-area .section-title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    margin-bottom: 40px;
+  }
+  .description-area .description-text h3 {
+    font-size: 0.95rem;
+    margin-top: 25px;
+    margin-bottom: 8px;
+  }
+  .description-area .description-text p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+}
+
+/*PROCESS SECTIOn */
 .process-section {
   padding: 140px 10%;
 }
@@ -124,3 +210,4 @@
     gap: 40px;
   }
 }
+
