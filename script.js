@@ -1,4 +1,9 @@
-AOS.init({ duration: 1000, once: false });
+AOS.init({
+  duration: 1000,
+  once: false,
+  mirror: true,
+  easing: "ease-in-out"
+});
 
 window.addEventListener("scroll", function () {
   const nav = document.querySelector(".navbar");
@@ -103,6 +108,7 @@ function updateSurveyHelpLink(lang) {
     span.textContent = span.getAttribute(`data-${lang}`);
   }
 }
+
 
 
 
