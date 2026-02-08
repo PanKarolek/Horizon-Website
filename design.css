@@ -1,7 +1,9 @@
+/* Sekcja opisowa */
 .description-area {
   padding: 120px 10%;
   background: var(--light-gray);
   color: var(--text);
+  transition: background 0.3s, color 0.3s;
 }
 
 body.dark .description-area {
@@ -13,6 +15,9 @@ body.dark .description-area {
   font-family: "Syncopate", sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 50px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .description-grid {
@@ -21,6 +26,13 @@ body.dark .description-area {
   gap: 40px;
 }
 
+.desc-card {
+  padding: 20px 0;
+  opacity: 0; 
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
 .desc-card h3 {
   font-family: "Syncopate", sans-serif;
   font-size: 1.1rem;
@@ -28,6 +40,9 @@ body.dark .description-area {
   display: flex;
   align-items: center;
   gap: 12px;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .desc-card .dot {
@@ -46,27 +61,34 @@ body.dark .desc-card .dot {
   font-size: 0.95rem;
   line-height: 1.8;
   margin-left: 24px;
-}
-
-/* Animacje AOS */
-[data-aos="fade-right"] {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-[data-aos="fade-up"] {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
+.fade-in-left {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.fade-in-up {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+.translating {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 @media (max-width: 768px) {
   .description-area { padding: 60px 5%; }
   .desc-card p { margin-left: 0; }
   .desc-card h3 { font-size: 1rem; }
   .description-area .section-title { font-size: clamp(1.5rem, 7vw, 2rem); }
 }
-
 
 /*PROCESS SECTIOn */
 .process-section {
@@ -193,6 +215,7 @@ body.dark .desc-card .dot {
     gap: 40px;
   }
 }
+
 
 
 
