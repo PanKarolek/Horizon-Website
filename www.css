@@ -197,3 +197,14 @@
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
+
+.description-area {
+  padding: 100px 10%;
+  background: var(--light-gray);
+  color: var(--text);
+}
+
+body.dark .description-area {
+  background: #0d0f18;
+  color: #fff;
+}
