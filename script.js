@@ -69,6 +69,8 @@ function applyLang(lang, fast = false) {
     });
     langToggle.classList.remove("switching");
   }, fast ? 0 : 300);
+
+updateSurveyHelpLink(lang);
 }
 
 applyTheme(currentTheme, true);
@@ -84,4 +86,22 @@ langToggle.addEventListener("click", () => {
   currentLang = currentLang === "en" ? "pl" : "en";
   localStorage.setItem("horizon_lang", currentLang);
   applyLang(currentLang);
+
 });
+
+// Funkcja ustawiająca odpowiedni link w zależności od języka
+function updateSurveyHelpLink(lang) {
+  const link = document.querySelector('.survey-help-link');
+  if (!link) return;
+
+  // zmiana href w zależności od języka
+  link.href = link.getAttribute(`data-${lang}-link`);
+
+  // zmiana tekstu linku
+  const span = link.querySelector('.translatable');
+  if (span) {
+    span.textContent = span.getAttribute(`data-${lang}`);
+  }
+}
+
+
