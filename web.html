@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Horizon | Creative Agency & Digital Marketing</title>
+    <title>Horizon | Creative Agency</title>
     
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -11,52 +11,46 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="web.css" />
+    <link rel="stylesheet" href="www.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div class="cursor"></div>
 
-    <!-- NAV -->
-    <nav class="navbar" data-aos="fade-down" data-aos-duration="1000">
-      <div class="logo-container">
-        <a href="#hero"><img src="horizon.png" alt="Horizon Logo" class="main-logo" /></a>
-      </div>
-
-      <ul class="nav-menu">
-        <li><a href="#services" class="nav-link translatable" data-en="Services" data-pl="Usługi">Services</a></li>
-        <li><a href="#work" class="nav-link translatable" data-en="Portfolio" data-pl="Realizacje">Portfolio</a></li>
-        <li><a href="#contact" class="nav-link translatable" data-en="Contact" data-pl="Kontakt">Contact</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <button id="lang-toggle" class="lang-btn-modern">
-          <i class="fas fa-language"></i>
-          <span class="lang-label">PL</span>
-        </button>
-
-        <button id="theme-toggle" class="lang-btn-modern">
-          <i class="fas fa-moon"></i>
-          <span class="theme-label">Dark</span>
-        </button>
-
-        <a href="#contact" class="nav-cta translatable" data-en="Work With Us" data-pl="Współpraca">
-          Work With Us
-        </a>
-      </div>
+     <nav class="navbar">
+        <div class="logo-container">
+            <a href="index.html" aria-label="Home"><img src="horizon.png" alt="Horizon Logo" class="main-logo" /></a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html#services" class="nav-link translatable" data-en="Services" data-pl="Usługi">Services</a></li>
+            <li><a href="index.html#work" class="nav-link translatable" data-en="Portfolio" data-pl="Realizacje">Portfolio</a></li>
+            <li><a href="#about" class="nav-link translatable" data-en="About us" data-pl="O nas">About us</a></li>
+            <li><a href="index.html#contact" class="nav-link translatable" data-en="Contact" data-pl="Kontakt">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="lang-toggle" class="lang-btn-modern" aria-label="Switch Language">
+                <i class="fas fa-language" aria-hidden="true"></i>
+                <span class="lang-label">PL</span>
+            </button>
+            <button id="theme-toggle" class="lang-btn-modern" aria-label="Toggle theme">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+                <span class="theme-label">Dark</span>
+            </button>
+            <a href="index.html#contact" class="nav-cta translatable" data-en="Work With Us" data-pl="Współpraca">Work With Us</a>
+        </div>
     </nav>
 
-    <!-- HERO -->
     <header id="hero">
-      <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
-        <div class="brand-reveal">
-          <span class="main-name"
-                data-en="Web Applications"
-                data-pl="Aplikacje Webowe">
-            Web Applications
-          </span>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+            <p class="hero-label translatable" data-en="How we can help" data-pl="W czym pomagamy">How we can help</p>
+            <h1 class="hero-title">
+                <span class="sub-text translatable" data-en="Our Expertise" data-pl="Nasza ekspertyza">Our Expertise</span>
+                <div class="brand-reveal">
+                    <span class="main-name translatable" data-en="Web Apps." data-pl="Aplikacje webowe">Web Apps.</span>
+                </div>
+            </h1>
         </div>
-      </div>
     </header>
 
     <!-- SERVICES -->
@@ -64,9 +58,9 @@
       <div class="container">
 
         <h2 class="section-title translatable"
-            data-en="Our Web Apps Services"
-            data-pl="Nasze Usługi Web Apps">
-          Our Web Apps Services
+            data-en="What we create"
+            data-pl="Co tworzymy">
+          What we create
         </h2>
 
         <div class="services-grid">
@@ -135,54 +129,137 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact-area">
+<section id="services" class="services-area">
+  <div class="container">
+     <h2 class="section-title translatable" 
+        data-en="Our web design process" 
+        data-pl="Nasz proces tworzenia stron"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        data-aos-delay="100">
+      Our web design process
+    </h2>
+
+    <!-- PROCESS WRAPPER -->
+    <div class="process-wrapper">
+
+      <!-- LEWA: PROCES -->
+      <div class="process-timeline">
+
+        <div class="timeline-line"></div>
+
+        <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <div class="step-number">01</div>
+          <h3 class="translatable" data-en="Analysis & Planning" data-pl="Analiza i planowanie">
+            Analiza i planowanie
+          </h3>
+          <p class="translatable" data-en="We define goals, structure and users before design starts."
+             data-pl="Określamy cele, strukturę i użytkowników przed rozpoczęciem projektu.">
+            Określamy cele, strukturę i użytkowników przed rozpoczęciem projektu.
+          </p>
+        </div>
+
+        <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="step-number">02</div>
+          <h3 class="translatable" data-en="Design & UX" data-pl="Projekt i UX">
+            Projekt i UX
+          </h3>
+          <p class="translatable" data-en="We design modern, readable and intuitive interfaces."
+             data-pl="Projektujemy nowoczesne, czytelne i intuicyjne interfejsy.">
+            Projektujemy nowoczesne, czytelne i intuicyjne interfejsy.
+          </p>
+        </div>
+
+        <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="step-number">03</div>
+          <h3 class="translatable" data-en="WordPress Development" data-pl="Wdrożenie WordPress">
+            Wdrożenie WordPress
+          </h3>
+          <p class="translatable" data-en="We build custom WordPress websites using clean code."
+             data-pl="Tworzymy dedykowane strony WordPress w oparciu o czysty kod.">
+            Tworzymy dedykowane strony WordPress w oparciu o czysty kod.
+          </p>
+        </div>
+
+        <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <div class="step-number">04</div>
+          <h3 class="translatable" data-en="Launch & Optimization" data-pl="Wdrożenie i optymalizacja">
+            Wdrożenie i optymalizacja
+          </h3>
+          <p class="translatable" data-en="We test, launch and optimize performance."
+             data-pl="Testujemy, wdrażamy i optymalizujemy wydajność strony.">
+            Testujemy, wdrażamy i optymalizujemy wydajność strony.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- PRAWA: TECHNOLOGIE -->
+      <div class="tech-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+        <p class="tech-title translatable" data-en="What we use" data-pl="Co wykorzystujemy?">
+          Co wykorzystujemy?
+        </p>
+
+        <div class="tech-grid">
+          <div class="tech-box"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+          <div class="tech-box"><i class="fab fa-html5"></i><span>HTML</span></div>
+          <div class="tech-box"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+          <div class="tech-box"><i class="fab fa-js"></i><span>JavaScript</span></div>
+          <div class="tech-box"><i class="fab fa-php"></i><span>PHP</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" class="contact-area">
       <div class="container">
         <div class="contact-content" data-aos="zoom-in">
-
-          <p class="label translatable" data-en="Ready to start?" data-pl="Gotowy na start?">
-            Ready to start?
-          </p>
-
-          <h2 class="section-title translatable" data-en="Get in touch" data-pl="Napisz do nas">
-            Get in touch
-          </h2>
-
+          <p class="label translatable" data-en="Ready to start?" data-pl="Gotowy na start?">Ready to start?</p>
+          <h2 class="section-title translatable" data-en="Get in touch" data-pl="Napisz do nas">Get in touch</h2>
           <div class="contact-methods">
-            <a href="mailto:hello@horizon.agency" class="contact-email">
-              hello@horizon.agency
-            </a>
-
+            <a href="mailto:hello@horizon.agency" class="contact-email">hello@horizon.agency</a>
             <div class="contact-divider"><span>or</span></div>
-
-            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=taTszd56QkSNwivn_YB7I1tmtVyAY8lKuq5HrPmT9d9UQ1g3QjZHM1QzRjc1Rzk5OTgyMVlST0U2TS4u"
-               target="_blank"
-               class="btn-survey translatable"
-               data-en="Start Project Survey"
-               data-pl="Wypełnij Brief">
-
-              Start Project Survey <i class="fas fa-clipboard-list"></i>
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=taTszd56QkSNwivn_YB7I1tmtVyAY8lKuq5HrPmT9d9UQ1g3QjZHM1QzRjc1Rzk5OTgyMVlST0U2TS4u" 
+               id="survey-btn"
+               target="_blank" 
+               class="btn-survey translatable" 
+               data-en="Start Project Survey " 
+               data-pl="Wypełnij Brief "
+               data-en-link="https://forms.office.com/Pages/ResponsePage.aspx?id=taTszd56QkSNwivn_YB7I1tmtVyAY8lKuq5HrPmT9d9UQ1g3QjZHM1QzRjc1Rzk5OTgyMVlST0U2TS4u"
+               data-pl-link="https://forms.office.com/Pages/ResponsePage.aspx?id=taTszd56QkSNwivn_YB7I6eQgU3ZEv9LroMUn3YrCJlURjNXS1JIU0NWSEIySENRWFVLTDJaWkhaNC4u">
+               Start Project Survey <i class="fas fa-clipboard-list"></i>
             </a>
-          </div>
 
+            <div class="survey-help">
+              <a href="brief-eng.mp4" target="_blank" class="survey-help-link"
+                 data-en-link="brief-eng.mp4"
+                 data-pl-link="brief-pl.mp4">
+                <span class="translatable" data-en="Not sure how to fill it out?" data-pl="Nie wiesz jak wypełnić brief?">
+                  Not sure how to fill it out?
+                </span>
+                <i class="fa-solid fa-arrow-down help-arrow"></i>
+              </a>
+            </div>
+    
+          </div>
+          <div class="contact-socials">
+            <a href="#" class="contact-socials-icons" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="contact-socials-icons" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="contact-socials-icons" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- FOOTER -->
+    
     <footer>
       <div class="footer-wrap">
         <div class="footer-left">
           <img src="horizon.png" alt="Horizon Logo" class="footer-logo" />
-
-          <p>
-            &copy; 2026 Horizon Agency.
-            <span class="translatable"
-                  data-en="All rights (not) reserved lol."
-                  data-pl="Wszelkie prawa (nie)zastrzeżone.">
-              All rights (not) reserved.
-            </span>
-          </p>
+          <p>&copy; 2026 Horizon Agency. <span class="translatable" data-en="All rights (not) reserved" data-pl="Wszelkie prawa (nie)zastrzeżone.">All rights (not) reserved.</span></p>
+          
         </div>
       </div>
     </footer>
@@ -190,4 +267,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
   </body>
+
 </html>
