@@ -1,61 +1,89 @@
-.services-content {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: left;
+/*SERVICES PROCESS */
+
+.services-process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 64px;
+  margin-top: 100px;
 }
 
-.services-intro {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: var(--muted);
-  margin-bottom: 80px;
-}
-
-.services-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-
-.step {
+.process-step {
   position: relative;
-  padding-left: 80px;
 }
 
-.step-number {
-  position: absolute;
-  left: 0;
-  top: 0;
+.process-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-family: "Syncopate", sans-serif;
-  font-size: 1.2rem;
-  color: var(--muted);
-  opacity: 0.5;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+
+  background: var(--light-gray);
+  color: var(--text);
+
+  margin-bottom: 24px;
+  transition: var(--transition);
 }
 
-.step h3 {
+.process-step:hover .process-icon {
+  background: var(--text);
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+.process-step h3 {
   font-family: "Syncopate", sans-serif;
-  font-size: 1.3rem;
-  margin-bottom: 15px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  margin-bottom: 14px;
 }
 
-.step p {
-  font-size: 1rem;
+.process-step p {
+  font-size: 0.9rem;
   line-height: 1.7;
   color: var(--muted);
 }
 
+/* TECH TAGS  */
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 60px;
+}
+
+.tech-tags span {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  background: var(--light-gray);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 1024px) {
+  .services-process {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+}
+
 @media (max-width: 768px) {
-  .services-content {
-    text-align: left;
-  }
-
-  .step {
-    padding-left: 0;
-  }
-
-  .step-number {
-    position: static;
-    display: block;
-    margin-bottom: 10px;
+  .services-process {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 }
