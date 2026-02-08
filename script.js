@@ -8,6 +8,25 @@ AOS.init({
 window.addEventListener("scroll", function () {
   const nav = document.querySelector(".navbar");
   window.scrollY > 50 ? nav.classList.add("scrolled") : nav.classList.remove("scrolled");
+
+  // Animacja opisowych kart
+  const cards = document.querySelectorAll("#what-we-do .desc-card");
+  const windowBottom = window.innerHeight;
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+
+    const h3 = card.querySelector("h3");
+    if (rect.top < windowBottom - 50) h3.classList.add("fade-in-left");
+
+    const p = card.querySelector("p");
+    if (rect.top < windowBottom - 50) p.classList.add("fade-in-up");
+  });
+
+  // Sekcja tytuł
+  const title = document.querySelector("#what-we-do .section-title");
+  if (title && title.getBoundingClientRect().top < windowBottom - 50) {
+    title.classList.add("fade-in-left");
+  }
 });
 
 const cursor = document.querySelector(".cursor");
@@ -29,9 +48,7 @@ let currentLang = localStorage.getItem("horizon_lang") || "en";
 let currentTheme = localStorage.getItem("horizon_theme") || "light";
 
 function applyTheme(theme, fast = false) {
-  if (fast) {
-    document.documentElement.classList.add("no-transition");
-  }
+  if (fast) document.documentElement.classList.add("no-transition");
 
   if (theme === "dark") {
     document.body.classList.add("dark");
@@ -54,10 +71,9 @@ function applyLang(lang, fast = false) {
   const surveyBtn = document.getElementById("survey-btn");
   const langLabel = langToggle.querySelector(".lang-label");
 
-  if (!fast) {
-    langToggle.classList.add("switching");
-    targets.forEach(el => el.classList.add("switching"));
-  }
+  if (!fast) langToggle.classList.add("switching");
+
+  targets.forEach(el => el.classList.add("translating"));
 
   setTimeout(() => {
     langLabel.innerText = lang === "en" ? "PL" : "EN";
@@ -65,17 +81,14 @@ function applyLang(lang, fast = false) {
 
     targets.forEach(el => {
       const newText = el.getAttribute(`data-${lang}`);
-      el.childNodes.forEach(node => {
-        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "") {
-          node.textContent = newText;
-        }
-      });
-      el.classList.remove("switching");
+      if (newText) el.textContent = newText;
+      el.classList.remove("translating");
     });
-    langToggle.classList.remove("switching");
-  }, fast ? 0 : 300);
 
-updateSurveyHelpLink(lang);
+    if (!fast) langToggle.classList.remove("switching");
+
+    updateSurveyHelpLink(lang);
+  }, fast ? 0 : 300);
 }
 
 applyTheme(currentTheme, true);
@@ -91,40 +104,13 @@ langToggle.addEventListener("click", () => {
   currentLang = currentLang === "en" ? "pl" : "en";
   localStorage.setItem("horizon_lang", currentLang);
   applyLang(currentLang);
-
 });
 
-// Funkcja ustawiająca odpowiedni link w zależności od języka
 function updateSurveyHelpLink(lang) {
   const link = document.querySelector('.survey-help-link');
   if (!link) return;
 
-  // zmiana href w zależności od języka
   link.href = link.getAttribute(`data-${lang}-link`);
-
-  // zmiana tekstu linku
   const span = link.querySelector('.translatable');
-  if (span) {
-    span.textContent = span.getAttribute(`data-${lang}`);
-  }
+  if (span) span.textContent = span.getAttribute(`data-${lang}`);
 }
-
-function animateDescCards() {
-  const cards = document.querySelectorAll("#what-we-do .desc-card");
-  const windowBottom = window.innerHeight;
-
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-
-    // Nagłówek fade in left
-    const h3 = card.querySelector("h3");
-    if (rect.top < windowBottom - 50) h3.classList.add("fade-in-left");
-
-    // Tekst fade in up
-    const p = card.querySelector("p");
-    if (rect.top < windowBottom - 50) p.classList.add("fade-in-up");
-  });
-}
-
-window.addEventListener("scroll", animateDescCards);
-window.addEventListener("load", animateDescCards);
