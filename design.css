@@ -1,54 +1,61 @@
-.services-area {
-    padding: 5rem 2rem;
-    background-color: #f9f9f9;
-    text-align: center;
+.services-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.services-area .section-title {
-    font-size: 2.2rem;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
+.services-intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 80px;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+.services-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
-.service-card {
-    background-color: var(--secondary-color);
-    padding: 2rem 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform var(--transition), box-shadow var(--transition);
-    cursor: default;
+.step {
+  position: relative;
+  padding-left: 80px;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+.step-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Syncopate", sans-serif;
+  font-size: 1.2rem;
+  color: var(--muted);
+  opacity: 0.5;
 }
 
-.service-title {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: var(--primary-color);
+.step h3 {
+  font-family: "Syncopate", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
 }
 
-.service-desc {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
+.step p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--muted);
 }
+
 @media (max-width: 768px) {
-    .services-area {
-        padding: 3rem 1rem;
-    }
-    
-    .services-area .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-    }
+  .services-content {
+    text-align: left;
+  }
+
+  .step {
+    padding-left: 0;
+  }
+
+  .step-number {
+    position: static;
+    display: block;
+    margin-bottom: 10px;
+  }
 }
