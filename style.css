@@ -19,7 +19,7 @@ body.dark {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
+  cursor: none !important;
 }
 
 .no-transition,
@@ -179,6 +179,10 @@ body.dark .navbar.scrolled {
 .lang-btn-modern i {
   font-size: 1rem;
   transition: transform 0.4s;
+}
+
+a, button, .clickable {
+  cursor: none !important;
 }
 
 .lang-btn-modern:hover {
