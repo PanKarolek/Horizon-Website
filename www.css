@@ -1,4 +1,4 @@
-/* Base Layout (Existing) */
+/* Base Layout */
 .services-area {
     padding: 5rem 2rem;
     background: var(--bg);
@@ -24,7 +24,6 @@
     border-radius: 12px;
     border: 1px solid var(--border);
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    /* Updated transition for smoother bounce */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: default;
     text-align: left;
@@ -35,11 +34,10 @@
 .service-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-    border-color: var(--text); /* Highlight border on hover */
-    background-color: var(--bg); /* Subtle contrast shift */
+    border-color: var(--text);
+    background-color: var(--bg);
 }
 
-/* Optional: Add a subtle corner glow on hover */
 .service-card::after {
     content: '';
     position: absolute;
@@ -64,7 +62,7 @@
 }
 
 .service-card:hover .service-title {
-    color: var(--text); /* Ensure contrast */
+    color: var(--text);
     text-decoration: underline;
     text-decoration-color: var(--muted);
     text-underline-offset: 4px;
@@ -264,6 +262,12 @@ body.dark .timeline-step:hover .step-number {
     75% { transform: rotate(-5deg); }
 }
 
+@media (max-width: 1200px) {
+    .process-wrapper {
+        gap: 40px;
+    }
+}
+
 @media (max-width: 1024px) {
     .process-wrapper {
         grid-template-columns: 1fr;
@@ -271,6 +275,7 @@ body.dark .timeline-step:hover .step-number {
     }
     .process-timeline {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -278,14 +283,60 @@ body.dark .timeline-step:hover .step-number {
     .timeline-line {
         display: none; 
     }
+    .tech-card {
+        padding: 25px;
+    }
 }
 
 @media (max-width: 768px) {
-    .services-area { padding: 3rem 1rem; }
-    .services-area .section-title { font-size: 1.8rem; margin-bottom: 2rem; }
-    .process-timeline { grid-template-columns: 1fr; gap: 40px; }
-    .tech-grid { grid-template-columns: 1fr; }
-    .description-area { padding: 60px 5%; }
+    .services-area { 
+        padding: 4rem 5%; 
+    }
+    .services-area .section-title { 
+        font-size: 1.8rem; 
+        margin-bottom: 2.5rem; 
+    }
+    .description-area { 
+        padding: 60px 5%; 
+    }
+    .process-timeline { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
+    .tech-grid { 
+        grid-template-columns: 1fr; 
+    }
+    .description-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .desc-card {
+        padding: 1.5rem;
+    }
+    .hero-title {
+        font-size: 2.5rem; /* Fallback if not controlled by main style */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-area {
+        padding: 3rem 1rem;
+    }
+    .desc-card h3 {
+        font-size: 1.1rem;
+    }
+    .timeline-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .step-number {
+        margin-bottom: 15px;
+    }
+    .tech-grid {
+        gap: 15px;
+    }
 }
 
 body.dark .service-card {

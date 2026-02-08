@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Horizon | Creative Agency</title>
-    
+    <meta name="description" content="Custom Web Applications by Horizon Agency.">
+    <title>Web Apps | Horizon Agency</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="www.css" />
-    
-  </head>
+</head>
+<body>
+    <div class="cursor" aria-hidden="true"></div>
 
-  <body>
-    <div class="cursor"></div>
-
-     <nav class="navbar">
+   <nav class="navbar">
         <div class="logo-container">
             <a href="index.html" aria-label="Home"><img src="horizon.png" alt="Horizon Logo" class="main-logo" /></a>
         </div>
@@ -47,97 +44,94 @@
             <h1 class="hero-title">
                 <span class="sub-text translatable" data-en="Our Expertise" data-pl="Nasza ekspertyza">Our Expertise</span>
                 <div class="brand-reveal">
-                    <span class="main-name translatable" data-en="Web Apps." data-pl="Aplikacje webowe">Web Apps.</span>
+                    <span class="main-name translatable" data-en="Web Apps." data-pl="Aplikacje Web.">Web Apps.</span>
                 </div>
             </h1>
         </div>
     </header>
 
-    <section id="services" class="services-area">
+    <section id="what-we-do" class="description-area">
+        <div class="container">
+          <h2 class="section-title translatable" 
+              data-en="What we create" 
+              data-pl="Co tworzymy"
+              data-aos="fade-right" data-aos-duration="1000">
+            What we create
+          </h2>
+
+          <div class="description-grid">
+            <div class="desc-card">
+              <h3 class="translatable" data-aos="fade-right" data-aos-delay="100" data-en="SaaS Platforms" data-pl="Platformy SaaS">SaaS Platforms</h3>
+              <p class="translatable" data-aos="fade-up" data-aos-delay="150" data-en="Scalable cloud-based software enabling you to sell services to thousands of users globally." data-pl="Skalowalne oprogramowanie w chmurze, umożliwiające sprzedaż usług tysiącom użytkowników na całym świecie.">Scalable cloud-based software enabling you to sell services to thousands of users globally.</p>
+            </div>
+
+            <div class="desc-card">
+              <h3 class="translatable" data-aos="fade-right" data-aos-delay="200" data-en="Internal Tools" data-pl="Narzędzia Wewnętrzne">Internal Tools</h3>
+              <p class="translatable" data-aos="fade-up" data-aos-delay="250" data-en="Custom CRM, ERP, and dashboards designed to automate your specific business processes." data-pl="Dedykowane systemy CRM, ERP i dashboardy zaprojektowane w celu automatyzacji Twoich procesów biznesowych.">Custom CRM, ERP, and dashboards designed to automate your specific business processes.</p>
+            </div>
+
+            <div class="desc-card">
+              <h3 class="translatable" data-aos="fade-right" data-aos-delay="300" data-en="Progressive Web Apps" data-pl="Aplikacje PWA">Progressive Web Apps</h3>
+              <p class="translatable" data-aos="fade-up" data-aos-delay="350" data-en="Websites that work like mobile apps – installable, fast, and capable of working offline." data-pl="Strony działające jak aplikacje mobilne – instalowalne, szybkie i zdolne do pracy w trybie offline.">Websites that work like mobile apps – installable, fast, and capable of working offline.</p>
+            </div>
+
+            <div class="desc-card">
+              <h3 class="translatable" data-aos="fade-right" data-aos-delay="400" data-en="API & Integrations" data-pl="API i Integracje">API & Integrations</h3>
+              <p class="translatable" data-aos="fade-up" data-aos-delay="450" data-en="We connect your systems (payments, logistics, AI) to create a unified data ecosystem." data-pl="Łączymy Twoje systemy (płatności, logistyka, AI), tworząc spójny ekosystem danych.">We connect your systems (payments, logistics, AI) to create a unified data ecosystem.</p>
+            </div>
+          </div>
+        </div>
+  </section>
+
+    <section id="process" class="services-area">
       <div class="container">
-
-        <h2 class="section-title translatable"
-            data-en="What we create"
-            data-pl="Co tworzymy">
-          What we create
+         <h2 class="section-title translatable" 
+            data-en="Development process" 
+            data-pl="Proces developerski"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="100">
+            Development process
         </h2>
-
-        <div class="services-grid">
-          <div class="service-card" data-aos="fade-up">
-            <h3 class="service-title translatable" data-en="Custom Applications" data-pl="Aplikacje Indywidualne">Custom Applications</h3>
-            <p class="service-desc translatable" data-en="We develop dedicated web applications tailored to your business processes." data-pl="Tworzymy dedykowane aplikacje webowe dopasowane do procesów Twojego biznesu.">We develop dedicated web applications tailored to your business processes.</p>
+        <div class="process-wrapper">
+          <div class="process-timeline">
+            <div class="timeline-line"></div>
+            <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+              <div class="step-number">01</div>
+              <h3 class="translatable" data-en="Architecture" data-pl="Architektura">Architektura</h3>
+              <p class="translatable" data-en="We select the tech stack and design database structure." data-pl="Dobieramy technologie i projektujemy strukturę bazy danych.">Dobieramy technologie i projektujemy strukturę bazy danych.</p>
+            </div>
+            <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+              <div class="step-number">02</div>
+              <h3 class="translatable" data-en="Development" data-pl="Programowanie">Programowanie</h3>
+              <p class="translatable" data-en="Coding frontend and backend using agile methodology." data-pl="Kodowanie frontendu i backendu w metodyce agile.">Kodowanie frontendu i backendu w metodyce agile.</p>
+            </div>
+            <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+              <div class="step-number">03</div>
+              <h3 class="translatable" data-en="Testing & QA" data-pl="Testy i QA">Testy i QA</h3>
+              <p class="translatable" data-en="Security, performance, and functionality testing." data-pl="Testy bezpieczeństwa, wydajności i funkcjonalności.">Testy bezpieczeństwa, wydajności i funkcjonalności.</p>
+            </div>
+            <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+              <div class="step-number">04</div>
+              <h3 class="translatable" data-en="Deployment" data-pl="Wdrożenie">Wdrożenie</h3>
+              <p class="translatable" data-en="Cloud configuration and production launch." data-pl="Konfiguracja chmury i uruchomienie produkcyjne.">Konfiguracja chmury i uruchomienie produkcyjne.</p>
+            </div>
           </div>
-          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="service-title translatable" data-en="Scalable Systems" data-pl="Skalowalne Systemy">Scalable Systems</h3>
-            <p class="service-desc translatable" data-en="We build solutions ready to grow — from MVPs to advanced platforms." data-pl="Budujemy rozwiązania gotowe na rozwój — od MVP po rozbudowane platformy.">We build solutions ready to grow — from MVPs to advanced platforms.</p>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="service-title translatable" data-en="Performance & Security" data-pl="Wydajność i Bezpieczeństwo">Performance & Security</h3>
-            <p class="service-desc translatable" data-en="We use clean, efficient code to ensure speed, stability, and top-level security." data-pl="Stosujemy czysty, efektywny kod zapewniający szybkość działania i najwyższy poziom bezpieczeństwa.">We use clean, efficient code to ensure speed, stability, and top-level security.</p>
-          </div>
-          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-            <h3 class="service-title translatable" data-en="Integrations & Automation" data-pl="Integracje i Automatyzacje">Integrations & Automation</h3>
-            <p class="service-desc translatable" data-en="We connect applications with external systems and automate business processes." data-pl="Łączymy aplikacje z systemami zewnętrznymi i automatyzujemy procesy biznesowe.">We connect applications with external systems and automate business processes.</p>
+          <div class="tech-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+            <p class="tech-title translatable" data-en="Tech Stack" data-pl="Technologie">Technologie</p>
+            <div class="tech-grid">
+              <div class="tech-box"><i class="fab fa-react"></i><span>React / Next.js</span></div>
+              <div class="tech-box"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+              <div class="tech-box"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+              <div class="tech-box"><i class="fab fa-docker"></i><span>Docker</span></div>
+              <div class="tech-box"><i class="fab fa-aws"></i><span>AWS</span></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-<section id="process" class="services-area">
-  <div class="container">
-     <h2 class="section-title translatable" 
-        data-en="Development Process" 
-        data-pl="Proces Deweloperski"
-        data-aos="fade-right"
-        data-aos-duration="1000"
-        data-aos-delay="100">
-      Development Process
-    </h2>
-
-    <div class="process-wrapper">
-      <div class="process-timeline">
-        <div class="timeline-line"></div>
-
-        <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-          <div class="step-number">01</div>
-          <h3 class="translatable" data-en="Analysis & Logic" data-pl="Analiza i Logika">Analysis & Logic</h3>
-          <p class="translatable" data-en="We define database structure and user flows." data-pl="Definiujemy strukturę bazy danych i przepływy użytkownika.">We define database structure and user flows.</p>
-        </div>
-
-        <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-          <div class="step-number">02</div>
-          <h3 class="translatable" data-en="UI/UX Design" data-pl="UI/UX Design">UI/UX Design</h3>
-          <p class="translatable" data-en="Designing intuitive dashboards and interfaces." data-pl="Projektowanie intuicyjnych dashboardów i interfejsów.">Designing intuitive dashboards and interfaces.</p>
-        </div>
-
-        <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-          <div class="step-number">03</div>
-          <h3 class="translatable" data-en="Full-Stack Development" data-pl="Programowanie Full-Stack">Full-Stack Development</h3>
-          <p class="translatable" data-en="Coding the application using modern frameworks." data-pl="Programowanie aplikacji przy użyciu nowoczesnych frameworków.">Coding the application using modern frameworks.</p>
-        </div>
-
-        <div class="timeline-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-          <div class="step-number">04</div>
-          <h3 class="translatable" data-en="Testing & Deploy" data-pl="Testy i Wdrożenie">Testing & Deploy</h3>
-          <p class="translatable" data-en="Rigorous testing and server deployment." data-pl="Rygorystyczne testy i wdrożenie na serwer.">Rigorous testing and server deployment.</p>
-        </div>
-      </div>
-
-      <div class="tech-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
-        <p class="tech-title translatable" data-en="Tech Stack" data-pl="Technologie">Tech Stack</p>
-        <div class="tech-grid">
-          <div class="tech-box"><i class="fab fa-react"></i><span>React</span></div>
-          <div class="tech-box"><i class="fab fa-node-js"></i><span>Node.js</span></div>
-          <div class="tech-box"><i class="fas fa-database"></i><span>SQL</span></div>
-          <div class="tech-box"><i class="fab fa-python"></i><span>Python</span></div>
-          <div class="tech-box"><i class="fab fa-aws"></i><span>AWS</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact-area">
+    <section id="contact" class="contact-area">
       <div class="container">
         <div class="contact-content" data-aos="zoom-in">
           <p class="label translatable" data-en="Ready to start?" data-pl="Gotowy na start?">Ready to start?</p>

@@ -137,21 +137,6 @@ body.dark .navbar.scrolled {
   width: 100%;
 }
 
-.nav-link::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background: var(--text);
-  transition: 0.3s;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
 .nav-actions {
   flex: 1;
   display: flex;
@@ -675,78 +660,6 @@ body.dark .logos-section.container {
   background-color: rgb(0, 0, 0);
 }
 
-@media (max-width: 768px) {
-  * {
-    cursor: auto !important;
-  }
-  .cursor {
-    display: none;
-  }
-
-  .navbar, .navbar.scrolled {
-    padding: 10px 5% !important;
-    gap: 10px;
-    justify-content: space-between;
-  }
-
-  .nav-menu {
-    display: none;  
-  }
-
-  .nav-actions {
-    flex: 0 0 auto;
-    gap: 8px;
-  }
-
-  .nav-cta {
-    padding: 8px 12px;
-    font-size: 0.7rem;
-    white-space: nowrap;
-  }
-
-  .main-name {
-    font-size: 3.5rem !important;
-    letter-spacing: -2px;
-  }
-
-  .container {
-    padding: 60px 5%;
-  }
-
-  .stats-bar {
-    flex-direction: column;
-    gap: 30px;
-    padding: 40px 5%;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .work-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .s-card {
-    padding: 40px 25px;
-  }
-
-  .contact-email {
-    font-size: 1.8rem;
-    word-break: break-all;
-  }
-
-  .btn-survey {
-    padding: 18px 40px;
-    font-size: 0.9rem;
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-  }
-
-}
-/* boxy o nas */
 .about-section {
   background: var(--bg);
 }
@@ -841,26 +754,6 @@ body.dark .team-card {
   margin-bottom: 10px;
 }
 
-@media (max-width: 768px) {
-  .team-card p {
-    min-height: auto;
-  }
-  .team-card,
-  .team-card h4,
-  .team-card p,
-  .team-name {
-    transform: none !important;
-    transition: none !important;
-  }
-  .team-name {
-    margin-top: 16px;
-    font-size: 0.75rem;
-    opacity: 1;
-  }
-
-}
-/*koniec boxy o nas  */
-/* link do filmiku */
 .survey-help {
   margin-top: 24px;
   text-align: center;
@@ -896,5 +789,106 @@ body.dark .team-card {
 .survey-help-link:hover .help-arrow {
   transform: translateY(4px);
 }
-/*koniec linka do filmiku  */
 
+
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+  .cursor {
+    display: none;
+  }
+
+  .navbar, .navbar.scrolled {
+    padding: 10px 5% !important;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .nav-menu {
+    display: none;  
+  }
+
+  .nav-actions {
+    flex: 0 0 auto;
+    gap: 8px;
+  }
+
+  /* Compact Navbar Buttons for Mobile */
+  .lang-btn-modern {
+    padding: 8px;
+    width: 38px;
+    justify-content: center;
+  }
+  
+  .lang-label, .theme-label {
+    display: none;
+  }
+
+  .nav-cta {
+    padding: 8px 14px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .main-logo {
+    height: 18px;
+  }
+
+  .main-name {
+    font-size: 3.5rem !important;
+    letter-spacing: -2px;
+  }
+
+  .container {
+    padding: 60px 5%;
+  }
+
+  .stats-bar {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 5%;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .s-card {
+    padding: 40px 25px;
+  }
+
+  .contact-email {
+    font-size: 1.8rem;
+    word-break: break-all;
+  }
+
+  .btn-survey {
+    padding: 18px 40px;
+    font-size: 0.9rem;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .team-card p {
+    min-height: auto;
+  }
+  .team-card,
+  .team-card h4,
+  .team-card p,
+  .team-name {
+    transform: none !important;
+    transition: none !important;
+  }
+  .team-name {
+    margin-top: 16px;
+    font-size: 0.75rem;
+    opacity: 1;
+  }
+}
