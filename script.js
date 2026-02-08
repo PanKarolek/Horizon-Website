@@ -109,6 +109,22 @@ function updateSurveyHelpLink(lang) {
   }
 }
 
+function animateDescCards() {
+  const cards = document.querySelectorAll("#what-we-do .desc-card");
+  const windowBottom = window.innerHeight;
 
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
 
+    // Nagłówek fade in left
+    const h3 = card.querySelector("h3");
+    if (rect.top < windowBottom - 50) h3.classList.add("fade-in-left");
 
+    // Tekst fade in up
+    const p = card.querySelector("p");
+    if (rect.top < windowBottom - 50) p.classList.add("fade-in-up");
+  });
+}
+
+window.addEventListener("scroll", animateDescCards);
+window.addEventListener("load", animateDescCards);
