@@ -1,6 +1,6 @@
 .services-area {
     padding: 5rem 2rem;
-    background-color: #f9f9f9;
+    background: var(--bg);
     text-align: center;
 }
 
@@ -51,4 +51,24 @@
         font-size: 1.8rem;
         margin-bottom: 2rem;
     }
+}
+
+/* DARK MODE Fixy */
+.services-area {
+  background: var(--bg);
+}
+.services-area .section-title,
+.process-section .section-title,
+.service-title,
+.timeline-step h3,
+.tech-title {
+  color: var(--text);
+}
+.service-desc,
+.timeline-step p {
+  color: var(--muted);
+}
+.service-card,
+.tech-card {
+  background: var(--light-gray);
 }
